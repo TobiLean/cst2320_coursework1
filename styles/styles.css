@@ -1,5 +1,6 @@
 body {
     background-color: aqua;
+    /* overflow-x: hidden; */
 }
 
 #navigation_div {
@@ -7,6 +8,59 @@ body {
     height: 100px;
     background-color: black;
     position: absolute;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+#page_navigation {
+    position: relative;
+    display: flex;
+    width: auto;
+    height: 100px;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 0;
+    margin: 0;
+    align-items: center;
+}
+
+#navigation_links {
+    margin: 0;
+    padding: 0;
+}
+
+#navigation_links li{
+    display: inline;
+    float: left;
+    margin-left: 10px;
+}
+
+#nav_logo {
+    width: 182px;
+    height: 68.58px;
+    background-color: red;
+}
+
+#profile_select {
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+#profile_select > * {
+    margin-left: 10px;
+}
+
+#nav_profile {
+    width: 46px;
+    height: 46px;
+    background-color: yellow;
+    border-radius: 25px;
 }
