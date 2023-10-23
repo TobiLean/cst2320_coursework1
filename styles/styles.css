@@ -1,10 +1,21 @@
 body {
-    background-color: aqua;
-    /* overflow-x: hidden; */
+    background-color: white;
+    overflow-x: auto;
+    scrollbar-gutter: stable;
+    display: flex;
+    justify-content: center;
 }
 
-#navigation_div {
+/* html {
     width: 100vw;
+} */
+
+/* body::-webkit-scrollbar{
+    
+} */
+
+#navigation_div {
+    width: 100%;
     height: 100px;
     background-color: black;
     position: absolute;
@@ -63,4 +74,118 @@ body {
     height: 46px;
     background-color: yellow;
     border-radius: 25px;
+}
+
+#hero_section {
+    position: absolute;
+    top: 159px;
+    left: 0;
+    width: 100%;;
+    height: auto;
+}
+
+#play_carousel {
+    width: 95vw;
+    height: 400px;
+    background-color: red;
+    margin: auto;
+}
+
+#mid_section {
+    position: absolute;
+    top: 618px;
+    width: 95vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#about_btn {
+    background-color: aqua;
+    width: 40%;
+    height: 200px;
+}
+
+#how-to_btn {
+    background-color: green;
+    width: 55%;
+    height: 200px;
+}
+
+#bottom_section {
+    position: absolute;
+    top: 850px;
+    width: 95vw;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.piece_details {
+    width: 200px;
+    height: auto;
+}
+
+.piece_image {
+    width: 100%;
+    height: 300px;
+    background-color: lightcoral;
+}
+
+.piece_textbox {
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    background-color: lightcoral;
+}
+
+.arrow_button {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: brown;
+}
+
+#arrow_button_left {
+    left: 0%;
+}
+
+#arrow_button_right {
+    right: 0%;
+}
+
+footer {
+    position: absolute;
+    top: 1440px;
+    width: 100%;
+    height: 257px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#support {
+    width: 200px;
+    height: 100px;
+    background-color: chartreuse;
+}
+
+#contact {
+    width: 200px;
+    height: 100px;
+    background-color: chartreuse;
+}
+
+#address {
+    width: 200px;
+    height: 100px;
+    background-color: chartreuse;
+}
+
+#copyright {
+    position: absolute;
+    bottom: 0;
+    color: yellowgreen;
 }
