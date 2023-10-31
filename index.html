@@ -12,19 +12,19 @@
             <div id="page_navigation">
                 <ol id="navigation_links">
                     <li class="nav_link" id="home_nav">
-                        <a href="">Home</a>
+                        <a href="./index.html">Home</a>
                     </li>
                     <li class="nav_link" id="play_nav">
-                        <a href="">Play</a>
+                        <a href="./game.html">Play</a>
                     </li>
                     <li class="nav_link" id="leaderboard_nav">
-                        <a href="">Leaderboard</a>
+                        <a href="./leaderboard.html">Leaderboard</a>
                     </li>
                 </ol>
             </div>
 
             <div class="logo" id="nav_logo">
-                <img src="./assests/images/CuteChess_logo-01.png" alt="CuteChess Logo">
+                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
             </div>
 
             <div id="profile_select">
@@ -44,28 +44,48 @@
 
     <section id="mid_section">
         <div id="about_btn">
-            <p class="action_btn" id="about_btn_text"><a href="#popup_1">About</a></p>
+            <p class="action_btn" id="about_btn_text"><a href="#overlay_1">About</a></p>
         </div>
 
-        <div class="overlay" id="popup_1">
-            <a href="#"><div class="close_popup">
-                &times;
-            </div></a>
+        <div class="overlay" id="overlay_1">
+            <a href="#">
+                <div class="close_overlay">
+                    &times;
+                </div>
+            </a>
+            <div class="popup" id="about_popup">
+                <p class="popup_header">About</p>
+                <p class="popup_text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut atque, et nisi iure eiu 
+                    deleniti rerum accusantium illo id, sint tempora saepe doloribus maxime 
+                    magni consectetur odio natus ullam ab?
+                </p>
+            </div>
         </div>
 
         <div id="how-to_btn">
-            <p class="action_btn" id="how-to_btn_text"><a href="#popup_2">How to play</a></p>
+            <p class="action_btn" id="how-to_btn_text"><a href="#overlay_2">How to play</a></p>
         </div>
 
-        <div class="overlay" id="popup_2">
-            <a href="#"><div class="close_popup">
-                &times;
-            </div></a>
+        <div class="overlay" id="overlay_2">
+            <a href="#">
+                <div class="close_overlay">
+                    &times;
+                </div>
+            </a>
+            <div class="popup" id="how-to_popup">
+                <p class="popup_header">How to play</p>
+                <p class="popup_text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut atque, et nisi iure eiu 
+                    deleniti rerum accusantium illo id, sint tempora saepe doloribus maxime 
+                    magni consectetur odio natus ullam ab?
+                </p>
+            </div>
         </div>
 
     </section>
 
-    <section id="bottom_section">
+    <section id="piece_section">
         <div class="piece_details" id="piece_1">
             <div class="piece_image" id="piece_image_1">
                 <img src="./assests/images/chess_piece_king.png" alt="chess piece King">
@@ -102,6 +122,28 @@
             </div>
             <div class="piece_textbox" id="piece_text_4">
                 <p class="piece_name">Knight</p>
+                <p class="piece_desc">This is the most important piece <br>on the board.</p>
+                <p class="piece_points">0 pts</p>
+            </div>
+        </div>
+
+        <div class="piece_details" id="piece_5">
+            <div class="piece_image" id="piece_image_5">
+                <img src="./assests/images/chess_piece_rook.png" alt="chess piece rook">
+            </div>
+            <div class="piece_textbox" id="piece_text_5">
+                <p class="piece_name">Rook</p>
+                <p class="piece_desc">This is the most important piece <br>on the board.</p>
+                <p class="piece_points">0 pts</p>
+            </div>
+        </div>
+
+        <div class="piece_details" id="piece_6">
+            <div class="piece_image" id="piece_image_6">
+                <img src="./assests/images/chess_piece_pawn.png" alt="chess piece pawn">
+            </div>
+            <div class="piece_textbox" id="piece_text_6">
+                <p class="piece_name">Pawn</p>
                 <p class="piece_desc">This is the most important piece <br>on the board.</p>
                 <p class="piece_points">0 pts</p>
             </div>
