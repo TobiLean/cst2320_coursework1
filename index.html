@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess</title>
     <link href="styles/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -37,15 +40,21 @@
     </nav>
 
     <section id="hero_section">
-        <div id="play_carousel">
-            <p class="action_btn" id="play_btn_text">Play</p>
-        </div>
+        
+        <a href="./game.html" class="btn_card">
+            <div id="play_carousel">
+                <p class="action_btn" id="play_btn_text">Play</p>
+            </div>
+        </a>
     </section>
 
     <section id="mid_section">
-        <div id="about_btn">
-            <p class="action_btn" id="about_btn_text"><a href="#overlay_1">About</a></p>
-        </div>
+
+        <a href="#overlay_1" class="btn_card">
+            <div id="about_btn">
+                <p class="action_btn" id="about_btn_text">About</p>
+            </div>
+        </a>
 
         <div class="overlay" id="overlay_1">
             <a href="#">
@@ -63,9 +72,11 @@
             </div>
         </div>
 
-        <div id="how-to_btn">
-            <p class="action_btn" id="how-to_btn_text"><a href="#overlay_2">How to play</a></p>
-        </div>
+        <a href="#overlay_2" class="btn_card">
+            <div id="how-to_btn">
+                <p class="action_btn" id="how-to_btn_text">How to play</p>
+            </div>
+        </a>
 
         <div class="overlay" id="overlay_2">
             <a href="#">
@@ -154,19 +165,27 @@
     </section>
 
     <footer>
-        <div id="support">
+        <div class="footer_element" id="support">
             <p class="footer_header">Support</p>
             <p class="support_link">Email Us</p>
             <p class="support_link">Support</p>
         </div>
-        <div id="contact">
+        <div class="footer_element" id="contact">
             <p class="footer_header">Contact</p>
-            <div class="social_meadia"></div>
-            <div class="social_meadia"></div>
-            <div class="social_meadia"></div>
-            <div class="social_meadia"></div>
+            <div id="contact_container">
+                <div class="social_media"></div>
+                <div class="social_media"></div>
+                <div class="social_media"></div>
+                <div class="social_media"></div>
+            </div>
         </div>
-        <div id="address"></div>
+        <div class="footer_element" id="address">
+            <div class="logo" id="footer_logo">
+                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
+            </div>
+            <p>PO Box 3894</p>
+            <p>1. Greatness Road, Abuja</p>
+        </div>
         <p id="copyright">All Rights Reserved</p>
     </footer>
 </body>
