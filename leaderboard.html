@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/leaderboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -37,37 +40,12 @@
     </nav>
 
     <section class="leaderboard_section">
-        <div class="filters"></div>
+        <div class="filters">
+            <button type="button" class="filter_btn">Top 10 | ⌄</button>
+            <button type="button" class="filter_btn">Blitz | ⌄</button>
+        </div>
+
         <div class="table_head"></div>
-            <!-- <table>
-                <thead>
-                    <tr class="head">
-                        <th id="rank">Rank</th>
-                        <th id="player">Player</th>
-                        <th id="points">Points</th>
-                        <th id="matches">Total Matches</th>
-                        <th id="title">Title</th>
-                        <th id="win">Win</th>
-                        <th id="draw">Draw</th>
-                        <th id="lose">Lose</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                </tbody>
-
-                <tr class="data">
-                    <th>1</th>
-                    <th>John</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                </tr>
-            </table> -->
 
             <table class="table">
                 <thead>
@@ -83,7 +61,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                <tr>
                     <td>1</td>
                     <td>AmbiguousFish3000</td>
                     <td>30</td>
@@ -92,9 +70,9 @@
                     <td>15</td>
                     <td>15</td>
                     <td>15</td>
-                  </tr>
+                </tr>
 
-                  <tr>
+                <tr>
                     <td>2</td>
                     <td>AmbiguousFish3000</td>
                     <td>30</td>
@@ -103,9 +81,9 @@
                     <td>15</td>
                     <td>15</td>
                     <td>15</td>
-                  </tr>
+                </tr>
 
-                  <tr>
+                <tr>
                     <td>3</td>
                     <td>AmbiguousFish3000</td>
                     <td>30</td>
@@ -114,9 +92,9 @@
                     <td>15</td>
                     <td>15</td>
                     <td>15</td>
-                  </tr>
+                </tr>
 
-                  <tr>
+                <tr>
                     <td>4</td>
                     <td>AmbiguousFish3000</td>
                     <td>30</td>
@@ -125,9 +103,9 @@
                     <td>15</td>
                     <td>15</td>
                     <td>15</td>
-                  </tr>
+                </tr>
 
-                  <tr>
+                <tr>
                     <td>5</td>
                     <td>AmbiguousFish3000</td>
                     <td>30</td>
@@ -136,9 +114,9 @@
                     <td>15</td>
                     <td>15</td>
                     <td>15</td>
-                  </tr>
+                </tr>
 
-                  <tr>
+                <tr>
                     <td>6</td>
                     <td>AmbiguousFish3000</td>
                     <td>30</td>
@@ -147,25 +125,33 @@
                     <td>15</td>
                     <td>15</td>
                     <td>15</td>
-                  </tr>
-              </table>
+                </tr>
+            </table>
               
     </section>
 
     <footer>
-        <div id="support">
+        <div class="footer_element" id="support">
             <p class="footer_header">Support</p>
             <p class="support_link">Email Us</p>
             <p class="support_link">Support</p>
         </div>
-        <div id="contact">
+        <div class="footer_element" id="contact">
             <p class="footer_header">Contact</p>
-            <div class="social_meadia"></div>
-            <div class="social_meadia"></div>
-            <div class="social_meadia"></div>
-            <div class="social_meadia"></div>
+            <div id="contact_container">
+                <div class="social_media"></div>
+                <div class="social_media"></div>
+                <div class="social_media"></div>
+                <div class="social_media"></div>
+            </div>
         </div>
-        <div id="address"></div>
+        <div class="footer_element" id="address">
+            <div class="logo" id="footer_logo">
+                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
+            </div>
+            <p>PO Box 3894</p>
+            <p>1. Greatness Road, Abuja</p>
+        </div>
         <p id="copyright">All Rights Reserved</p>
     </footer>
 

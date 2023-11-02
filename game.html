@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -37,7 +40,74 @@
     </nav>
 
     <section class="main_section">
-        <div id="chess_board"></div>
+        <div id="chess_board">
+
+            <div class="cell row_1 light"></div>
+            <div class="cell row_1 dark"></div>
+            <div class="cell row_1 light"></div>
+            <div class="cell row_1 dark"></div>
+            <div class="cell row_1 light"></div>
+            <div class="cell row_1 dark"></div>
+            <div class="cell row_1 light"></div>
+            <div class="cell row_1 dark"></div>
+            <div class="cell row_2 dark"></div>
+            <div class="cell row_2 light"></div>
+            <div class="cell row_2 dark"></div>
+            <div class="cell row_2 light"></div>
+            <div class="cell row_2 dark"></div>
+            <div class="cell row_2 light"></div>
+            <div class="cell row_2 dark"></div>
+            <div class="cell row_2 light"></div>
+            <div class="cell row_3 light"></div>
+            <div class="cell row_3 dark"></div>
+            <div class="cell row_3 light"></div>
+            <div class="cell row_3 dark"></div>
+            <div class="cell row_3 light"></div>
+            <div class="cell row_3 dark"></div>
+            <div class="cell row_3 light"></div>
+            <div class="cell row_3 dark"></div>
+            <div class="cell row_4 dark"></div>
+            <div class="cell row_4 light"></div>
+            <div class="cell row_4 dark"></div>
+            <div class="cell row_4 light"></div>
+            <div class="cell row_4 dark"></div>
+            <div class="cell row_4 light"></div>
+            <div class="cell row_4 dark"></div>
+            <div class="cell row_4 light"></div>
+            <div class="cell row_5 light"></div>
+            <div class="cell row_5 dark"></div>
+            <div class="cell row_5 light"></div>
+            <div class="cell row_5 dark"></div>
+            <div class="cell row_5 light"></div>
+            <div class="cell row_5 dark"></div>
+            <div class="cell row_5 light"></div>
+            <div class="cell row_5 dark"></div>
+            <div class="cell row_6 dark"></div>
+            <div class="cell row_6 light"></div>
+            <div class="cell row_6 dark"></div>
+            <div class="cell row_6 light"></div>
+            <div class="cell row_6 dark"></div>
+            <div class="cell row_6 light"></div>
+            <div class="cell row_6 dark"></div>
+            <div class="cell row_6 light"></div>
+            <div class="cell row_7 light"></div>
+            <div class="cell row_7 dark"></div>
+            <div class="cell row_7 light"></div>
+            <div class="cell row_7 dark"></div>
+            <div class="cell row_7 light"></div>
+            <div class="cell row_7 dark"></div>
+            <div class="cell row_7 light"></div>
+            <div class="cell row_7 dark"></div>
+            <div class="cell row_8 dark"></div>
+            <div class="cell row_8 light"></div>
+            <div class="cell row_8 dark"></div>
+            <div class="cell row_8 light"></div>
+            <div class="cell row_8 dark"></div>
+            <div class="cell row_8 light"></div>
+            <div class="cell row_8 dark"></div>
+            <div class="cell row_8 light"></div>
+            
+        </div>
         <div id="settings">
 
             <div id="profile_div">
@@ -61,14 +131,24 @@
                 <p class="options_text">Options</p>
 
                 <div id="mode_div">
-                    <div id="mode_text">Mode</div>
+                    <div id="mode_text">Mode:</div>
                     <input class="mode_option" type="button" value="Blitz">
                     <input class="mode_option" type="button" value="Rapid">
                     <input class="mode_option" type="button" value="Bullet">
                 </div>
+
+                <div id="theme_div">
+                    <div id="mode_text">Theme:</div>
+                    <input class="theme_option" type="button" value="Classic">
+                    <input class="theme_option" type="button" value="Adventure">
+                    <input class="theme_option" type="button" value="Street">
+                </div>
+
             </div>
 
-            <div id="start_div"></div>
+            <div id="start_div">
+                <input id="start_end_btn" type="button" value="Start">
+            </div>
         </div>
     </section>
 
