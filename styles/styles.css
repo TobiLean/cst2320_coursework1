@@ -1,11 +1,16 @@
 :root {
     font-size: 16px;
-    --body_yellow : #FBECB2;
-    --body_yellow_transparent: rgba(255, 248, 246, 0.95);
+    --navbar_white : #fff8f6;
+    --navbar_white_transparent: rgba(255, 248, 246, 0.95);
+    --new_green: #f8fff6;
+    --new_blue: #f6fdff;
+    --new_pink: #fcf6ff;
     --subtle_pink: #FFA1F5;
     --mustard_yellow: #F4CE14;
     --moss_green: #495E57;
     --flat_dark: #45474B;
+    --body_yellow : #FBECB2;
+    --body_yellow_transparent: rgba(255, 248, 246, 0.95);
     --water_blue: #5272F2;
     --dark_blue: #072541;
 }
@@ -227,10 +232,6 @@ body {
     background: url(../assests/images/btn_card_bg_how-light.png);
 }
 
-/* #how-to_btn:hover {
-    background-color: #F4CE14;
-} */
-
 .btn_card {
     text-decoration: none;
 }
@@ -309,6 +310,7 @@ body {
     font-size: 0.8rem;
     color: black;
     margin: 0;
+    font-weight: 600;
 }
 
 /*

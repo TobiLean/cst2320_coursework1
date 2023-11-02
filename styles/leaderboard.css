@@ -5,10 +5,14 @@
     --new_green: #f8fff6;
     --new_blue: #f6fdff;
     --new_pink: #fcf6ff;
-    --subtle_pink: #E5C3A6;
+    --subtle_pink: #FFA1F5;
     --mustard_yellow: #F4CE14;
     --moss_green: #495E57;
     --flat_dark: #45474B;
+    --body_yellow : #FBECB2;
+    --body_yellow_transparent: rgba(255, 248, 246, 0.95);
+    --water_blue: #5272F2;
+    --dark_blue: #072541;
     padding: 0;
     margin: 0;
     outline: 0;
@@ -29,18 +33,9 @@ body {
     font-family: encodeSans, 'Encode Sans', sans-serif;
 }
 
-/* html {
-    width: 100vw;
-} */
-
-/* body::-webkit-scrollbar{
-    
-} */
-
 #navigation_div {
     width: 100%;
     height: 100px;
-    background-color: var(--navbar_white);
     position: fixed;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -54,10 +49,20 @@ body {
     z-index: 1;
 }
 
+#navigation_div, footer {
+    background-color: white;
+    color: #000;
+}
+
+#navigation_div, footer, .nav_link a, #profile_select a {
+    color: #000;
+}
+
 .nav_link a {
     font-size: 1rem;
-    color: black;
     text-decoration: none;
+    font-weight: 600;
+    transition: color ease-in 0.25s;
 }
 
 .nav_link a:visited {
@@ -70,8 +75,8 @@ body {
 
 #profile_select a{
     font-size: 1rem;
-    color: black;
     text-decoration: none;
+    font-weight: 600;
 }
 
 #profile_select a:visited{
@@ -102,7 +107,6 @@ body {
 #navigation_links li{
     display: inline;
     float: left;
-    /* margin-left: 10px; */
 }
 
 #play_nav {
@@ -113,12 +117,12 @@ body {
     margin-left: 25px;
 }
 
-#nav_logo {
+.logo {
     width: 182px;
     height: 68.58px;
 }
 
-#nav_logo img {
+.logo img {
     max-width: 100%;
     max-height: 100%;
 }

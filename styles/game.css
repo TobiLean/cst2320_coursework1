@@ -2,13 +2,17 @@
     font-size: 16px;
     --navbar_white : #fff8f6;
     --navbar_white_transparent: rgba(255, 248, 246, 0.95);
-    --subtle_pink: #E5C3A6;
     --new_green: #f8fff6;
     --new_blue: #f6fdff;
     --new_pink: #fcf6ff;
+    --subtle_pink: #FFA1F5;
     --mustard_yellow: #F4CE14;
     --moss_green: #495E57;
     --flat_dark: #45474B;
+    --body_yellow : #FBECB2;
+    --body_yellow_transparent: rgba(255, 248, 246, 0.95);
+    --water_blue: #5272F2;
+    --dark_blue: #072541;
     padding: 0;
     margin: 0;
     outline: 0;
@@ -22,7 +26,7 @@
 }
 
 body {
-    background-color: var(--navbar_white);
+    background-color: var(--mustard_yellow);
     overflow-x: auto;
     scrollbar-gutter: stable;
     display: flex;
@@ -30,18 +34,13 @@ body {
     font-family: encodeSans, 'Encode Sans', sans-serif;
 }
 
-/* html {
-    width: 100vw;
-} */
-
-/* body::-webkit-scrollbar{
-    
-} */
+/*
+    Navbar styling
+*/
 
 #navigation_div {
     width: 100%;
     height: 100px;
-    background-color: var(--navbar_white);
     position: fixed;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -55,10 +54,20 @@ body {
     z-index: 1;
 }
 
+#navigation_div, footer {
+    background-color: white;
+    color: #000;
+}
+
+#navigation_div, footer, .nav_link a, #profile_select a {
+    color: #000;
+}
+
 .nav_link a {
     font-size: 1rem;
-    color: black;
     text-decoration: none;
+    font-weight: 600;
+    transition: color ease-in 0.25s;
 }
 
 .nav_link a:visited {
@@ -71,8 +80,8 @@ body {
 
 #profile_select a{
     font-size: 1rem;
-    color: black;
     text-decoration: none;
+    font-weight: 600;
 }
 
 #profile_select a:visited{
@@ -103,7 +112,6 @@ body {
 #navigation_links li{
     display: inline;
     float: left;
-    /* margin-left: 10px; */
 }
 
 #play_nav {
@@ -114,12 +122,12 @@ body {
     margin-left: 25px;
 }
 
-#nav_logo {
+.logo {
     width: 182px;
     height: 68.58px;
 }
 
-#nav_logo img {
+.logo img {
     max-width: 100%;
     max-height: 100%;
 }
@@ -144,4 +152,187 @@ body {
 #nav_profile img {
     max-width: 100%;
     max-height: 100%;
+}
+
+/*
+    Main section styling, includes the styling game area and setings section
+*/
+
+.main_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 95vw;
+    height: auto;
+    position: absolute;
+    top: 150px;
+}
+
+#chess_board {
+    width: 500px;
+    height: 500px;
+    background-color: var(--navbar_white);
+    float: left;
+}
+
+/*
+    Settings section
+*/
+
+#settings {
+    width: 500px;
+    height: 500px;
+    background-color: var(--navbar_white);
+    border-radius: 30px;
+    float: right;
+}
+
+.user_name {
+    margin: 0 40px 0 40px;
+}
+
+.timer {
+    font-size: 1.5rem;
+    height: max-content;
+    position: relative;
+}
+
+#timer_user_1 {
+    right: 20px;
+}
+
+#timer_user_2 {
+    left: 20px;
+}
+
+#profile_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.profile_picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: #000;
+    float: left;
+    margin: 20px 25px;
+    position: relative;
+    top: 10px;
+}
+
+#versus_text {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.divider {
+    width: 90%;
+    height: 3px;
+    background-color: var(--flat_dark);
+    position: relative;
+    top: 50px;
+    margin: auto;
+}
+
+#options_div {
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+}
+
+.options_text {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.mode_option {
+    border: 0;
+    color: black;
+    background-color: transparent;
+    width: 60px;
+    border-radius: 5px;
+    font-family: encodeSans, 'Encode Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* 
+    Footer section styling.
+*/
+
+footer {
+    position: absolute;
+    top: 750px;
+    width: 100%;
+    height: 257px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0 0 0;
+    margin-bottom: 0px;
+}
+
+#footer_logo {
+    filter: brightness(0);
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+}
+
+#address p {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.footer_element {
+    margin: 0 10px;
+    width: 200px;
+    height: 100%;
+    display: block;
+}
+
+#copyright {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+.support_link {
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social_media {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 15px;
+    margin: 0 5px;
+}
+
+#contact_container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_header {
+    font-size: 1.8rem;
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
 }
