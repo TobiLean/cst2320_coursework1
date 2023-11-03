@@ -1,211 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cute Chess</title>
-    <link href="styles/index.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link href="styles/index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav>
-        <div id="navigation_div">
-            <div id="page_navigation">
-                <ol id="navigation_links">
-                    <li class="nav_link" id="home_nav">
-                        <a href="./index.html">Home</a>
-                    </li>
-                    <li class="nav_link" id="play_nav">
-                        <a href="./game.html">Play</a>
-                    </li>
-                    <li class="nav_link" id="leaderboard_nav">
-                        <a href="./leaderboard.html">Leaderboard</a>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="logo" id="nav_logo">
-                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
-            </div>
-
-            <div id="profile_select">
-                <a href="./signup.html">Sign up</a>
-                <div id="nav_profile">
-                    <img src="./assests/images/CuteChess_assets_profile_pic_1.png" alt="">
-                </div>
-            </div>
+      <div id="navigation_div">
+        <div id="page_navigation">
+          <ol id="navigation_links">
+            <li class="nav_link" id="home_nav">
+              <a href="./index.html">Home</a>
+            </li>
+            <li class="nav_link" id="play_nav">
+              <a href="./game.html">Play</a>
+            </li>
+            <li class="nav_link" id="leaderboard_nav">
+              <a href="./leaderboard.html">Leaderboard</a>
+            </li>
+          </ol>
         </div>
+
+        <div class="logo" id="nav_logo">
+          <a href="./index.html"
+            ><img
+              src="./assests/images/CuteChess_logo-01.png"
+              alt="Cute Chess Logo"
+          /></a>
+        </div>
+
+        <div id="profile_select">
+          <a href="./signup.html">Sign up</a>
+          <div id="nav_profile">
+            <img
+              src="./assests/images/CuteChess_assets_profile_pic_1.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </nav>
 
+    <!-- Divided Home page into different sections for easier styling -->
+
     <section id="hero_section">
-        
-        <a href="./game.html" class="btn_card">
-            <div id="play_carousel">
-                <p class="action_btn" id="play_btn_text">Play</p>
-            </div>
-        </a>
+      <a href="./game.html" class="btn_card">
+        <div id="play_carousel">
+          <p class="action_btn" id="play_btn_text">Play</p>
+        </div>
+      </a>
     </section>
 
     <section id="mid_section">
-
-        <a href="#overlay_1" class="btn_card">
-            <div id="about_btn">
-                <p class="action_btn" id="about_btn_text">About</p>
-            </div>
-        </a>
-
-        <div class="overlay" id="overlay_1">
-            <a href="#">
-                <div class="close_overlay">
-                    &times;
-                </div>
-            </a>
-            <div class="popup" id="about_popup">
-                <p class="popup_header">About</p>
-                <p class="popup_text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut atque, et nisi iure eiu 
-                    deleniti rerum accusantium illo id, sint tempora saepe doloribus maxime 
-                    magni consectetur odio natus ullam ab?
-                </p>
-            </div>
+      <a href="#overlay_1" class="btn_card">
+        <div id="about_btn">
+          <p class="action_btn" id="about_btn_text">About</p>
         </div>
+      </a>
 
-        <a href="#overlay_2" class="btn_card">
-            <div id="how-to_btn">
-                <p class="action_btn" id="how-to_btn_text">How to play</p>
-            </div>
+      <div class="overlay" id="overlay_1">
+        <a href="#">
+          <div class="close_overlay">&times;</div>
         </a>
-
-        <div class="overlay" id="overlay_2">
-            <a href="#">
-                <div class="close_overlay">
-                    &times;
-                </div>
-            </a>
-            <div class="popup" id="how-to_popup">
-                <p class="popup_header">How to play</p>
-                <p class="popup_text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut atque, et nisi iure eiu 
-                    deleniti rerum accusantium illo id, sint tempora saepe doloribus maxime 
-                    magni consectetur odio natus ullam ab?
-                </p>
-            </div>
+        <div class="popup" id="about_popup">
+          <p class="popup_header">About</p>
+          <p class="popup_text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut atque,
+            et nisi iure eiu deleniti rerum accusantium illo id, sint tempora
+            saepe doloribus maxime magni consectetur odio natus ullam ab?
+          </p>
         </div>
+      </div>
 
+      <a href="#overlay_2" class="btn_card">
+        <div id="how-to_btn">
+          <p class="action_btn" id="how-to_btn_text">How to play</p>
+        </div>
+      </a>
+
+      <div class="overlay" id="overlay_2">
+        <a href="#">
+          <div class="close_overlay">&times;</div>
+        </a>
+        <div class="popup" id="how-to_popup">
+          <p class="popup_header">How to play</p>
+          <p class="popup_text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut atque,
+            et nisi iure eiu deleniti rerum accusantium illo id, sint tempora
+            saepe doloribus maxime magni consectetur odio natus ullam ab?
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="piece_section">
-        <div class="piece_details" id="piece_1">
-            <div class="piece_image" id="piece_image_1">
-                <img src="./assests/images/chess_piece_king.png" alt="chess piece King">
-            </div>
-            <div class="piece_textbox" id="piece_text_">
-                <p class="piece_name">King</p>
-                <p class="piece_desc">This is the most important piece <br>on the board. <br><br></p>
-                <p class="piece_points">0 pts</p>
-            </div>
+      <div class="piece_details" id="piece_1">
+        <div class="piece_image" id="piece_image_1">
+          <img
+            src="./assests/images/chess_piece_king.png"
+            alt="chess piece King"
+          />
         </div>
-        <div class="piece_details" id="piece_2">
-            <div class="piece_image" id="piece_image_2">
-                <img src="./assests/images/chess_piece_queen.png" alt="chess piece Queen">
-            </div>
-            <div class="piece_textbox" id="piece_text_2">
-                <p class="piece_name">Queen</p>
-                <p class="piece_desc">The most powerful piece and moves in all directions<br>on the board.</p>
-                <p class="piece_points">9 pts</p>
-            </div>
+        <div class="piece_textbox" id="piece_text_">
+          <p class="piece_name">King</p>
+          <p class="piece_desc">
+            This is the most important piece <br />on the board. <br /><br />
+          </p>
+          <p class="piece_points">0 pts</p>
         </div>
-        <div class="piece_details" id="piece_3">
-            <div class="piece_image" id="piece_image_3">
-                <img src="./assests/images/chess_piece_bishop.png" alt="chess piece Bishop">
-            </div>
-            <div class="piece_textbox" id="piece_text_3">
-                <p class="piece_name">Bishop</p>
-                <p class="piece_desc">This is a point and shoot piece, it captures and moves diagonaly.</p>
-                <p class="piece_points">3 pts</p>
-            </div>
+      </div>
+      <div class="piece_details" id="piece_2">
+        <div class="piece_image" id="piece_image_2">
+          <img
+            src="./assests/images/chess_piece_queen.png"
+            alt="chess piece Queen"
+          />
         </div>
-        <div class="piece_details" id="piece_4">
-            <div class="piece_image" id="piece_image_4">
-                <img src="./assests/images/chess_piece_knight.png" alt="chess piece Knight">
-            </div>
-            <div class="piece_textbox" id="piece_text_4">
-                <p class="piece_name">Knight</p>
-                <p class="piece_desc">Mr. Chivalrous Moves in an L shape of 4 squares and can go over other pieces</p>
-                <p class="piece_points">3 pts</p>
-            </div>
+        <div class="piece_textbox" id="piece_text_2">
+          <p class="piece_name">Queen</p>
+          <p class="piece_desc">
+            The most powerful piece and moves in all directions<br />on the
+            board.
+          </p>
+          <p class="piece_points">9 pts</p>
         </div>
+      </div>
+      <div class="piece_details" id="piece_3">
+        <div class="piece_image" id="piece_image_3">
+          <img
+            src="./assests/images/chess_piece_bishop.png"
+            alt="chess piece Bishop"
+          />
+        </div>
+        <div class="piece_textbox" id="piece_text_3">
+          <p class="piece_name">Bishop</p>
+          <p class="piece_desc">
+            This is a point and shoot piece, it captures and moves diagonaly.
+          </p>
+          <p class="piece_points">3 pts</p>
+        </div>
+      </div>
+      <div class="piece_details" id="piece_4">
+        <div class="piece_image" id="piece_image_4">
+          <img
+            src="./assests/images/chess_piece_knight.png"
+            alt="chess piece Knight"
+          />
+        </div>
+        <div class="piece_textbox" id="piece_text_4">
+          <p class="piece_name">Knight</p>
+          <p class="piece_desc">
+            Mr. Chivalrous Moves in an L shape of 4 squares and can go over
+            other pieces
+          </p>
+          <p class="piece_points">3 pts</p>
+        </div>
+      </div>
 
-        <div class="piece_details" id="piece_5">
-            <div class="piece_image" id="piece_image_5">
-                <img src="./assests/images/chess_piece_rook.png" alt="chess piece rook">
-            </div>
-            <div class="piece_textbox" id="piece_text_5">
-                <p class="piece_name">Rook</p>
-                <p class="piece_desc">Responsible for castling, this piece moves horizontally and vertically.</p>
-                <p class="piece_points">5pts</p>
-            </div>
+      <div class="piece_details" id="piece_5">
+        <div class="piece_image" id="piece_image_5">
+          <img
+            src="./assests/images/chess_piece_rook.png"
+            alt="chess piece rook"
+          />
         </div>
-
-        <div class="piece_details" id="piece_6">
-            <div class="piece_image" id="piece_image_6">
-                <img src="./assests/images/chess_piece_pawn.png" alt="chess piece pawn">
-            </div>
-            <div class="piece_textbox" id="piece_text_6">
-                <p class="piece_name">Pawn</p>
-                <p class="piece_desc">The sacrifice. <br><br><br><br></p>
-                <p class="piece_points">1 pts</p>
-            </div>
+        <div class="piece_textbox" id="piece_text_5">
+          <p class="piece_name">Rook</p>
+          <p class="piece_desc">
+            Responsible for castling, this piece moves horizontally and
+            vertically.
+          </p>
+          <p class="piece_points">5pts</p>
         </div>
+      </div>
 
-        <div class="arrow_button" id="arrow_button_left"></div>
-        <div class="arrow_button" id="arrow_button_right"></div>
+      <div class="piece_details" id="piece_6">
+        <div class="piece_image" id="piece_image_6">
+          <img
+            src="./assests/images/chess_piece_pawn.png"
+            alt="chess piece pawn"
+          />
+        </div>
+        <div class="piece_textbox" id="piece_text_6">
+          <p class="piece_name">Pawn</p>
+          <p class="piece_desc">The sacrifice. <br /><br /><br /><br /></p>
+          <p class="piece_points">1 pts</p>
+        </div>
+      </div>
+
+      <div class="arrow_button" id="arrow_button_left"></div>
+      <div class="arrow_button" id="arrow_button_right"></div>
     </section>
 
     <footer>
-        <div class="footer_element" id="support">
-            <p class="footer_header">Support</p>
-            <p class="support_link"><a href="mailto: tobiloba.tsl@gmail.com">Email Us</a></p>
-            <p class="support_link"><a href="#">Support</a></p>
-        </div>
-        <div class="footer_element" id="contact">
-            <p class="footer_header">Contact</p>
-            <div id="contact_container">
-                <div class="social_media">
-                    <a href="https://www.linkedin.com/in/tslean/">
-                        <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
-                    </a>
-                </div>
-                <div class="social_media">
-                    <a href="https://instagram.com/tobilean">
-                        <i class="fa-brands fa-instagram" style="color: #000000;"></i>
-                    </a>
-                </div>
+      <div class="footer_element" id="support">
+        <p class="footer_header">Support</p>
+        <p class="support_link">
+          <a href="mailto: tobiloba.tsl@gmail.com">Email Us</a>
+        </p>
+        <p class="support_link"><a href="#">Support</a></p>
+      </div>
+      <div class="footer_element" id="contact">
+        <p class="footer_header">Contact</p>
+        <div id="contact_container">
+          <div class="social_media">
+            <a href="https://www.linkedin.com/in/tslean/">
+              <i class="fa-brands fa-linkedin" style="color: #000000"></i>
+            </a>
+          </div>
+          <div class="social_media">
+            <a href="https://instagram.com/tobilean">
+              <i class="fa-brands fa-instagram" style="color: #000000"></i>
+            </a>
+          </div>
 
-                <div class="social_media">
-                    <a href="https://github.com/TobiLean">
-                        <i class="fa-brands fa-github" style="color: #000000;"></i>
-                    </a>
-                </div>
+          <div class="social_media">
+            <a href="https://github.com/TobiLean">
+              <i class="fa-brands fa-github" style="color: #000000"></i>
+            </a>
+          </div>
 
-                <div class="social_media">
-                    <a href="https://twitter.com">
-                        <i class="fa-brands fa-x-twitter" style="color: #000000;"></i>
-                    </a>
-                </div>
-            </div>
+          <div class="social_media">
+            <a href="https://twitter.com">
+              <i class="fa-brands fa-x-twitter" style="color: #000000"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer_element" id="address">
-            <div class="logo" id="footer_logo">
-                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
-            </div>
-            <p>PO Box 3894</p>
-            <p>1. Greatness Road, Abuja</p>
+      </div>
+      <div class="footer_element" id="address">
+        <div class="logo" id="footer_logo">
+          <a href="./index.html"
+            ><img
+              src="./assests/images/CuteChess_logo-01.png"
+              alt="Cute Chess Logo"
+          /></a>
         </div>
-        <p id="copyright">All Rights Reserved</p>
+        <p>PO Box 3894</p>
+        <p>1. Greatness Road, Abuja</p>
+      </div>
+      <p id="copyright">All Rights Reserved</p>
     </footer>
-    <script src="https://kit.fontawesome.com/2d6490a2b6.js" crossorigin="anonymous"></script>
-</body>
+
+    <!-- importing font-awesome kit for social media icons -->
+    <script
+      src="https://kit.fontawesome.com/2d6490a2b6.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

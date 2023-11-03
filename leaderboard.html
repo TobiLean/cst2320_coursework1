@@ -1,256 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cute Chess | Leaderboard</title>
-    <link rel="stylesheet" href="./styles/leaderboard.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/leaderboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav>
-        <div id="navigation_div">
-            <div id="page_navigation">
-                <ol id="navigation_links">
-                    <li class="nav_link" id="home_nav">
-                        <a href="./index.html">Home</a>
-                    </li>
-                    <li class="nav_link" id="play_nav">
-                        <a href="./game.html">Play</a>
-                    </li>
-                    <li class="nav_link" id="leaderboard_nav">
-                        <a href="./leaderboard.html">Leaderboard</a>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="logo" id="nav_logo">
-                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
-            </div>
-
-            <div id="profile_select">
-                <a href="./signup.html">Sign up</a>
-                <div id="nav_profile">
-                    <img src="./assests/images/CuteChess_assets_profile_pic_1.png" alt="">
-                </div>
-            </div>
+      <div id="navigation_div">
+        <div id="page_navigation">
+          <ol id="navigation_links">
+            <li class="nav_link" id="home_nav">
+              <a href="./index.html">Home</a>
+            </li>
+            <li class="nav_link" id="play_nav">
+              <a href="./game.html">Play</a>
+            </li>
+            <li class="nav_link" id="leaderboard_nav">
+              <a href="./leaderboard.html">Leaderboard</a>
+            </li>
+          </ol>
         </div>
+
+        <div class="logo" id="nav_logo">
+          <a href="./index.html"
+            ><img
+              src="./assests/images/CuteChess_logo-01.png"
+              alt="Cute Chess Logo"
+          /></a>
+        </div>
+
+        <div id="profile_select">
+          <a href="./signup.html">Sign up</a>
+          <div id="nav_profile">
+            <img
+              src="./assests/images/CuteChess_assets_profile_pic_1.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </nav>
 
     <section class="leaderboard_section">
-        <div class="filters">
-            <button type="button" class="filter_btn" id="filter_btn_1">
-                Top 10 | +
-                <div class="drop_down" id="drop_down_1">
-                    <ul>
-                        <li class="filter_option">Top 10</li>
-                        <li class="list_ivider">
-                            <div class="drop_down_divider"></div>
-                        </li>
-                        <li class="filter_option">Top 15</li>
-                        <li class="list_ivider">
-                            <div class="drop_down_divider"></div>
-                        </li>
-                        <li class="filter_option">Top 20</li>
-                    </ul>
-                </div>
-            </button>
-            <button type="button" class="filter_btn" id="filter_btn_2">
-                Blitz | +
-                <div class="drop_down" id="drop_down_2">
-                    <ul>
-                        <li class="filter_option">Blitz</li>
-                        <li class="list_ivider">
-                            <div class="drop_down_divider"></div>
-                        </li>
-                        <li class="filter_option">Rapid</li>
-                        <li class="list_ivider">
-                            <div class="drop_down_divider"></div>
-                        </li>
-                        <li class="filter_option">Bullet</li>
-                    </ul>
-                </div>
-            </button>
-        </div>
+      <!-- Buttons to filer the leader-board table -->
+      <div class="filters">
+        <button type="button" class="filter_btn" id="filter_btn_1">
+          Top 10 | +
+          <div class="drop_down" id="drop_down_1">
+            <ul>
+              <li class="filter_option">Top 10</li>
+              <li class="list_ivider">
+                <div class="drop_down_divider"></div>
+              </li>
+              <li class="filter_option">Top 15</li>
+              <li class="list_ivider">
+                <div class="drop_down_divider"></div>
+              </li>
+              <li class="filter_option">Top 20</li>
+            </ul>
+          </div>
+        </button>
+        <button type="button" class="filter_btn" id="filter_btn_2">
+          Blitz | +
+          <div class="drop_down" id="drop_down_2">
+            <ul>
+              <li class="filter_option">Blitz</li>
+              <li class="list_ivider">
+                <div class="drop_down_divider"></div>
+              </li>
+              <li class="filter_option">Rapid</li>
+              <li class="list_ivider">
+                <div class="drop_down_divider"></div>
+              </li>
+              <li class="filter_option">Bullet</li>
+            </ul>
+          </div>
+        </button>
+      </div>
 
-        <div class="full_table"></div>
+      <!-- creating table for leader-board, will be dynamically created with JS later-->
+      <div class="full_table"></div>
 
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th id="rank">Rank</th>
-                    <th id="player">Player</th>
-                    <th id="points">Points</th>
-                    <th id="matches">Total Matches</th>
-                    <th id="title">Title</th>
-                    <th id="win">Win</th>
-                    <th id="draw">Draw</th>
-                    <th id="lose">Lose</th>
-                  </tr>
-                </thead>
-                
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th id="rank">Rank</th>
+            <th id="player">Player</th>
+            <th id="points">Points</th>
+            <th id="matches">Total Matches</th>
+            <th id="title">Title</th>
+            <th id="win">Win</th>
+            <th id="draw">Draw</th>
+            <th id="lose">Lose</th>
+          </tr>
+        </thead>
 
-                    <tr>
-                        <td>2</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>3</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+          <tr>
+            <td>2</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>4</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+          <tr>
+            <td>3</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>5</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+          <tr>
+            <td>4</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>6</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+          <tr>
+            <td>5</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>7</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+          <tr>
+            <td>6</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>8</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+          <tr>
+            <td>7</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>9</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
+          <tr>
+            <td>8</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-                    <tr>
-                        <td>10</td>
-                        <td>AmbiguousFish3000</td>
-                        <td>30</td>
-                        <td>15</td>
-                        <td>Novice King</td>
-                        <td>15</td>
-                        <td>15</td>
-                        <td>15</td>
-                    </tr>
-                </tbody>
+          <tr>
+            <td>9</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
 
-            </table>
-              
+          <tr>
+            <td>10</td>
+            <td>AmbiguousFish3000</td>
+            <td>30</td>
+            <td>15</td>
+            <td>Novice King</td>
+            <td>15</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <footer>
-        <div class="footer_element" id="support">
-            <p class="footer_header">Support</p>
-            <p class="support_link"><a href="mailto: tobiloba.tsl@gmail.com">Email Us</a></p>
-            <p class="support_link"><a href="#">Support</a></p>
-        </div>
-        <div class="footer_element" id="contact">
-            <p class="footer_header">Contact</p>
-            <div id="contact_container">
-                <div class="social_media">
-                    <a href="https://www.linkedin.com/in/tslean/">
-                        <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
-                    </a>
-                </div>
-                <div class="social_media">
-                    <a href="https://instagram.com/tobilean">
-                        <i class="fa-brands fa-instagram" style="color: #000000;"></i>
-                    </a>
-                </div>
+      <div class="footer_element" id="support">
+        <p class="footer_header">Support</p>
+        <p class="support_link">
+          <a href="mailto: tobiloba.tsl@gmail.com">Email Us</a>
+        </p>
+        <p class="support_link"><a href="#">Support</a></p>
+      </div>
+      <div class="footer_element" id="contact">
+        <p class="footer_header">Contact</p>
+        <div id="contact_container">
+          <div class="social_media">
+            <a href="https://www.linkedin.com/in/tslean/">
+              <i class="fa-brands fa-linkedin" style="color: #000000"></i>
+            </a>
+          </div>
+          <div class="social_media">
+            <a href="https://instagram.com/tobilean">
+              <i class="fa-brands fa-instagram" style="color: #000000"></i>
+            </a>
+          </div>
 
-                <div class="social_media">
-                    <a href="https://github.com/TobiLean">
-                        <i class="fa-brands fa-github" style="color: #000000;"></i>
-                    </a>
-                </div>
+          <div class="social_media">
+            <a href="https://github.com/TobiLean">
+              <i class="fa-brands fa-github" style="color: #000000"></i>
+            </a>
+          </div>
 
-                <div class="social_media">
-                    <a href="https://twitter.com">
-                        <i class="fa-brands fa-x-twitter" style="color: #000000;"></i>
-                    </a>
-                </div>
-            </div>
+          <div class="social_media">
+            <a href="https://twitter.com">
+              <i class="fa-brands fa-x-twitter" style="color: #000000"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer_element" id="address">
-            <div class="logo" id="footer_logo">
-                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
-            </div>
-            <p>PO Box 3894</p>
-            <p>1. Greatness Road, Abuja</p>
+      </div>
+      <div class="footer_element" id="address">
+        <div class="logo" id="footer_logo">
+          <a href="./index.html"
+            ><img
+              src="./assests/images/CuteChess_logo-01.png"
+              alt="Cute Chess Logo"
+          /></a>
         </div>
-        <p id="copyright">All Rights Reserved</p>
+        <p>PO Box 3894</p>
+        <p>1. Greatness Road, Abuja</p>
+      </div>
+      <p id="copyright">All Rights Reserved</p>
     </footer>
+  </body>
 
-</body>
-
-<script src="https://kit.fontawesome.com/2d6490a2b6.js" crossorigin="anonymous"></script>
+  <!-- importing font-awesome kit for social media icons -->
+  <script
+    src="https://kit.fontawesome.com/2d6490a2b6.js"
+    crossorigin="anonymous"
+  ></script>
 </html>

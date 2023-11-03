@@ -1,203 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cute Chess | Game</title>
-    <link rel="stylesheet" href="./styles/game.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/game.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav>
-        <div id="navigation_div">
-            <div id="page_navigation">
-                <ol id="navigation_links">
-                    <li class="nav_link" id="home_nav">
-                        <a href="./index.html">Home</a>
-                    </li>
-                    <li class="nav_link" id="play_nav">
-                        <a href="./game.html">Play</a>
-                    </li>
-                    <li class="nav_link" id="leaderboard_nav">
-                        <a href="./leaderboard.html">Leaderboard</a>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="logo" id="nav_logo">
-                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
-            </div>
-
-            <div id="profile_select">
-                <a href="./signup.html">Sign up</a>
-                <div id="nav_profile">
-                    <img src="./assests/images/CuteChess_assets_profile_pic_1.png" alt="">
-                </div>
-            </div>
+      <div id="navigation_div">
+        <div id="page_navigation">
+          <ol id="navigation_links">
+            <li class="nav_link" id="home_nav">
+              <a href="./index.html">Home</a>
+            </li>
+            <li class="nav_link" id="play_nav">
+              <a href="./game.html">Play</a>
+            </li>
+            <li class="nav_link" id="leaderboard_nav">
+              <a href="./leaderboard.html">Leaderboard</a>
+            </li>
+          </ol>
         </div>
+
+        <div class="logo" id="nav_logo">
+          <a href="./index.html"
+            ><img
+              src="./assests/images/CuteChess_logo-01.png"
+              alt="Cute Chess Logo"
+          /></a>
+        </div>
+
+        <div id="profile_select">
+          <a href="./signup.html">Sign up</a>
+          <div id="nav_profile">
+            <img
+              src="./assests/images/CuteChess_assets_profile_pic_1.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </nav>
 
     <section class="main_section">
-        <div id="chess_board">
+      <!-- Making chess-board with each individual cell -->
+      <div id="chess_board">
+        <div class="cell row_1 light"></div>
+        <div class="cell row_1 dark"></div>
+        <div class="cell row_1 light"></div>
+        <div class="cell row_1 dark"></div>
+        <div class="cell row_1 light"></div>
+        <div class="cell row_1 dark"></div>
+        <div class="cell row_1 light"></div>
+        <div class="cell row_1 dark"></div>
+        <div class="cell row_2 dark"></div>
+        <div class="cell row_2 light"></div>
+        <div class="cell row_2 dark"></div>
+        <div class="cell row_2 light"></div>
+        <div class="cell row_2 dark"></div>
+        <div class="cell row_2 light"></div>
+        <div class="cell row_2 dark"></div>
+        <div class="cell row_2 light"></div>
+        <div class="cell row_3 light"></div>
+        <div class="cell row_3 dark"></div>
+        <div class="cell row_3 light"></div>
+        <div class="cell row_3 dark"></div>
+        <div class="cell row_3 light"></div>
+        <div class="cell row_3 dark"></div>
+        <div class="cell row_3 light"></div>
+        <div class="cell row_3 dark"></div>
+        <div class="cell row_4 dark"></div>
+        <div class="cell row_4 light"></div>
+        <div class="cell row_4 dark"></div>
+        <div class="cell row_4 light"></div>
+        <div class="cell row_4 dark"></div>
+        <div class="cell row_4 light"></div>
+        <div class="cell row_4 dark"></div>
+        <div class="cell row_4 light"></div>
+        <div class="cell row_5 light"></div>
+        <div class="cell row_5 dark"></div>
+        <div class="cell row_5 light"></div>
+        <div class="cell row_5 dark"></div>
+        <div class="cell row_5 light"></div>
+        <div class="cell row_5 dark"></div>
+        <div class="cell row_5 light"></div>
+        <div class="cell row_5 dark"></div>
+        <div class="cell row_6 dark"></div>
+        <div class="cell row_6 light"></div>
+        <div class="cell row_6 dark"></div>
+        <div class="cell row_6 light"></div>
+        <div class="cell row_6 dark"></div>
+        <div class="cell row_6 light"></div>
+        <div class="cell row_6 dark"></div>
+        <div class="cell row_6 light"></div>
+        <div class="cell row_7 light"></div>
+        <div class="cell row_7 dark"></div>
+        <div class="cell row_7 light"></div>
+        <div class="cell row_7 dark"></div>
+        <div class="cell row_7 light"></div>
+        <div class="cell row_7 dark"></div>
+        <div class="cell row_7 light"></div>
+        <div class="cell row_7 dark"></div>
+        <div class="cell row_8 dark"></div>
+        <div class="cell row_8 light"></div>
+        <div class="cell row_8 dark"></div>
+        <div class="cell row_8 light"></div>
+        <div class="cell row_8 dark"></div>
+        <div class="cell row_8 light"></div>
+        <div class="cell row_8 dark"></div>
+        <div class="cell row_8 light"></div>
+      </div>
 
-            <div class="cell row_1 light"></div>
-            <div class="cell row_1 dark"></div>
-            <div class="cell row_1 light"></div>
-            <div class="cell row_1 dark"></div>
-            <div class="cell row_1 light"></div>
-            <div class="cell row_1 dark"></div>
-            <div class="cell row_1 light"></div>
-            <div class="cell row_1 dark"></div>
-            <div class="cell row_2 dark"></div>
-            <div class="cell row_2 light"></div>
-            <div class="cell row_2 dark"></div>
-            <div class="cell row_2 light"></div>
-            <div class="cell row_2 dark"></div>
-            <div class="cell row_2 light"></div>
-            <div class="cell row_2 dark"></div>
-            <div class="cell row_2 light"></div>
-            <div class="cell row_3 light"></div>
-            <div class="cell row_3 dark"></div>
-            <div class="cell row_3 light"></div>
-            <div class="cell row_3 dark"></div>
-            <div class="cell row_3 light"></div>
-            <div class="cell row_3 dark"></div>
-            <div class="cell row_3 light"></div>
-            <div class="cell row_3 dark"></div>
-            <div class="cell row_4 dark"></div>
-            <div class="cell row_4 light"></div>
-            <div class="cell row_4 dark"></div>
-            <div class="cell row_4 light"></div>
-            <div class="cell row_4 dark"></div>
-            <div class="cell row_4 light"></div>
-            <div class="cell row_4 dark"></div>
-            <div class="cell row_4 light"></div>
-            <div class="cell row_5 light"></div>
-            <div class="cell row_5 dark"></div>
-            <div class="cell row_5 light"></div>
-            <div class="cell row_5 dark"></div>
-            <div class="cell row_5 light"></div>
-            <div class="cell row_5 dark"></div>
-            <div class="cell row_5 light"></div>
-            <div class="cell row_5 dark"></div>
-            <div class="cell row_6 dark"></div>
-            <div class="cell row_6 light"></div>
-            <div class="cell row_6 dark"></div>
-            <div class="cell row_6 light"></div>
-            <div class="cell row_6 dark"></div>
-            <div class="cell row_6 light"></div>
-            <div class="cell row_6 dark"></div>
-            <div class="cell row_6 light"></div>
-            <div class="cell row_7 light"></div>
-            <div class="cell row_7 dark"></div>
-            <div class="cell row_7 light"></div>
-            <div class="cell row_7 dark"></div>
-            <div class="cell row_7 light"></div>
-            <div class="cell row_7 dark"></div>
-            <div class="cell row_7 light"></div>
-            <div class="cell row_7 dark"></div>
-            <div class="cell row_8 dark"></div>
-            <div class="cell row_8 light"></div>
-            <div class="cell row_8 dark"></div>
-            <div class="cell row_8 light"></div>
-            <div class="cell row_8 dark"></div>
-            <div class="cell row_8 light"></div>
-            <div class="cell row_8 dark"></div>
-            <div class="cell row_8 light"></div>
-            
+      <div id="settings">
+        <div id="profile_div">
+          <div class="user" id="user_1">
+            <div class="profile_picture" id="player_picture_1"></div>
+            <p class="user_name">Player 1</p>
+          </div>
+
+          <div class="timer" id="timer_user_1">00:00</div>
+          <p id="versus_text">VS</p>
+          <div class="timer" id="timer_user_2">00:00</div>
+          <div class="user" id="user_2">
+            <div class="profile_picture" id="player_picture_2"></div>
+            <p class="user_name">Player 2</p>
+          </div>
         </div>
-        <div id="settings">
 
-            <div id="profile_div">
-                <div class="user" id="user_1">
-                    <div class="profile_picture" id="player_picture_1"></div>
-                    <p class="user_name">Player 1</p>
-                </div>
-                <div class="timer" id="timer_user_1">00:00</div>
-                <p id="versus_text">VS</p>
-                <div class="timer" id="timer_user_2">00:00</div>
-                <div class="user" id="user_2">
-                    <div class="profile_picture" id="player_picture_2"></div>
-                    <p class="user_name">Player 2</p>
-                </div>
-                
-            </div>
+        <!-- Divider for styling purposes. Separates the user info from the options in settings -->
+        <div class="divider"></div>
 
-            <div class="divider"></div>
+        <div id="options_div">
+          <p class="options_text">Options</p>
 
-            <div id="options_div">
-                <p class="options_text">Options</p>
+          <div id="mode_div">
+            <div id="mode_text">Mode:</div>
+            <input class="mode_option" type="button" value="Blitz" />
+            <input class="mode_option" type="button" value="Rapid" />
+            <input class="mode_option" type="button" value="Bullet" />
+          </div>
 
-                <div id="mode_div">
-                    <div id="mode_text">Mode:</div>
-                    <input class="mode_option" type="button" value="Blitz">
-                    <input class="mode_option" type="button" value="Rapid">
-                    <input class="mode_option" type="button" value="Bullet">
-                </div>
-
-                <div id="theme_div">
-                    <div id="mode_text">Theme:</div>
-                    <input class="theme_option" type="button" value="Classic">
-                    <input class="theme_option" type="button" value="Adventure">
-                    <input class="theme_option" type="button" value="Street">
-                </div>
-
-            </div>
-
-            <div id="start_div">
-                <input id="start_end_btn" type="button" value="Start">
-            </div>
+          <div id="theme_div">
+            <div id="mode_text">Theme:</div>
+            <input class="theme_option" type="button" value="Classic" />
+            <input class="theme_option" type="button" value="Adventure" />
+            <input class="theme_option" type="button" value="Street" />
+          </div>
         </div>
+
+        <div id="start_div">
+          <input id="start_end_btn" type="button" value="Start" />
+        </div>
+      </div>
     </section>
 
     <footer>
-        <div class="footer_element" id="support">
-            <p class="footer_header">Support</p>
-            <p class="support_link"><a href="mailto: tobiloba.tsl@gmail.com">Email Us</a></p>
-            <p class="support_link"><a href="#">Support</a></p>
-        </div>
-        <div class="footer_element" id="contact">
-            <p class="footer_header">Contact</p>
-            <div id="contact_container">
-                <div class="social_media">
-                    <a href="https://www.linkedin.com/in/tslean/">
-                        <i class="fa-brands fa-linkedin" style="color: #000000;"></i>
-                    </a>
-                </div>
-                <div class="social_media">
-                    <a href="https://instagram.com/tobilean">
-                        <i class="fa-brands fa-instagram" style="color: #000000;"></i>
-                    </a>
-                </div>
+      <div class="footer_element" id="support">
+        <p class="footer_header">Support</p>
+        <p class="support_link">
+          <a href="mailto: tobiloba.tsl@gmail.com">Email Us</a>
+        </p>
+        <p class="support_link"><a href="#">Support</a></p>
+      </div>
 
-                <div class="social_media">
-                    <a href="https://github.com/TobiLean">
-                        <i class="fa-brands fa-github" style="color: #000000;"></i>
-                    </a>
-                </div>
+      <div class="footer_element" id="contact">
+        <p class="footer_header">Contact</p>
+        <div id="contact_container">
+          <div class="social_media">
+            <a href="https://www.linkedin.com/in/tslean/">
+              <i class="fa-brands fa-linkedin" style="color: #000000"></i>
+            </a>
+          </div>
+          <div class="social_media">
+            <a href="https://instagram.com/tobilean">
+              <i class="fa-brands fa-instagram" style="color: #000000"></i>
+            </a>
+          </div>
 
-                <div class="social_media">
-                    <a href="https://twitter.com">
-                        <i class="fa-brands fa-x-twitter" style="color: #000000;"></i>
-                    </a>
-                </div>
-            </div>
+          <div class="social_media">
+            <a href="https://github.com/TobiLean">
+              <i class="fa-brands fa-github" style="color: #000000"></i>
+            </a>
+          </div>
+
+          <div class="social_media">
+            <a href="https://twitter.com">
+              <i class="fa-brands fa-x-twitter" style="color: #000000"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer_element" id="address">
-            <div class="logo" id="footer_logo">
-                <a href="./index.html"><img src="./assests/images/CuteChess_logo-01.png" alt="Cute Chess Logo"></a>
-            </div>
-            <p>PO Box 3894</p>
-            <p>1. Greatness Road, Abuja</p>
+      </div>
+
+      <div class="footer_element" id="address">
+        <div class="logo" id="footer_logo">
+          <a href="./index.html"
+            ><img
+              src="./assests/images/CuteChess_logo-01.png"
+              alt="Cute Chess Logo"
+          /></a>
         </div>
-        <p id="copyright">All Rights Reserved</p>
+        <p>PO Box 3894</p>
+        <p>1. Greatness Road, Abuja</p>
+      </div>
+      <p id="copyright">All Rights Reserved</p>
     </footer>
+  </body>
 
-</body>
+  <!-- importing script to handle options button operations -->
+  <script src="./js/game_options.js"></script>
 
-<script src="./js/game_options.js"></script>
-<script src="https://kit.fontawesome.com/2d6490a2b6.js" crossorigin="anonymous"></script>
-
+  <!-- importing font awesome script for social media logos -->
+  <script
+    src="https://kit.fontawesome.com/2d6490a2b6.js"
+    crossorigin="anonymous"
+  ></script>
 </html>

@@ -1,340 +1,338 @@
-:root {
-    font-size: 16px;
-    --navbar_white : #fff8f6;
-    --navbar_white_transparent: rgba(255, 248, 246, 0.95);
-    --new_green: #f8fff6;
-    --new_blue: #f6fdff;
-    --new_pink: #fcf6ff;
-    --subtle_pink: #FFA1F5;
-    --mustard_yellow: #F4CE14;
-    --moss_green: #495E57;
-    --flat_dark: #45474B;
-    --body_yellow : #FBECB2;
-    --body_yellow_transparent: rgba(255, 248, 246, 0.95);
-    --water_blue: #5272F2;
-    --dark_blue: #072541;
-    padding: 0;
-    margin: 0;
-    outline: 0;
+@font-face {
+  font-family: encodeSans;
+  src: url("../assests/fonts/EncodeSans-VariableFont_wdth\,wght.ttf");
 }
 
-
-
-@font-face {
-    font-family: encodeSans;
-    src: url("/assests/fonts/EncodeSans-VariableFont_wdth\,wght.ttf");
+:root {
+  font-size: 16px;
+  --navbar_white: #fff8f6;
+  --navbar_white_transparent: rgba(255, 248, 246, 0.95);
+  --new_green: #f8fff6;
+  --new_blue: #f6fdff;
+  --new_pink: #fcf6ff;
+  --subtle_pink: #ffa1f5;
+  --mustard_yellow: #f4ce14;
+  --moss_green: #495e57;
+  --flat_dark: #45474b;
+  --body_yellow: #fbecb2;
+  --body_yellow_transparent: rgba(255, 248, 246, 0.95);
+  --water_blue: #5272f2;
+  --dark_blue: #072541;
+  padding: 0;
+  margin: 0;
+  outline: 0;
 }
 
 body {
-    background-color: var(--mustard_yellow);
-    overflow-x: auto;
-    scrollbar-gutter: stable;
-    display: flex;
-    justify-content: center;
-    font-family: encodeSans, 'Encode Sans', sans-serif;
+  background-color: var(--mustard_yellow);
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+  display: flex;
+  justify-content: center;
+  font-family: encodeSans, "Encode Sans", sans-serif;
 }
 
 /*
-    Navbar styling
+    Navbar and some footer styling
 */
 
 #navigation_div {
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px 0 10px;
-    z-index: 1;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  z-index: 1;
 }
 
-#navigation_div, footer {
-    background-color: white;
-    color: #000;
+#navigation_div,
+footer {
+  background-color: white;
+  color: #000;
 }
 
-#navigation_div, footer, .nav_link a, #profile_select a {
-    color: #000;
+#navigation_div,
+footer,
+.nav_link a,
+#profile_select a {
+  color: #000;
 }
 
 .nav_link a {
-    font-size: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color ease-in 0.15s;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color ease-in 0.15s;
 }
 
 .nav_link a:visited {
-    color: none;
+  color: none;
 }
 
 .nav_link a:hover {
-    color: var(--subtle_pink);
+  color: var(--subtle_pink);
 }
 
-#profile_select a{
-    font-size: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color ease-in 0.15s;
+#profile_select a {
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color ease-in 0.15s;
 }
 
-#profile_select a:visited{
-    color: none;
+#profile_select a:visited {
+  color: none;
 }
 
 #profile_select a:hover {
-    color: var(--subtle_pink);
+  color: var(--subtle_pink);
 }
 
 #page_navigation {
-    position: relative;
-    display: flex;
-    width: auto;
-    height: 100px;
-    top: 0;
-    left: 0;
-    padding: 0 0 0 0;
-    margin: 0;
-    align-items: center;
+  position: relative;
+  display: flex;
+  width: auto;
+  height: 100px;
+  top: 0;
+  left: 0;
+  padding: 0 0 0 0;
+  margin: 0;
+  align-items: center;
 }
 
 #navigation_links {
-    margin: 10px;
-    padding: 0;
+  margin: 10px;
+  padding: 0;
 }
 
-#navigation_links li{
-    display: inline;
-    float: left;
+#navigation_links li {
+  display: inline;
+  float: left;
 }
 
 #play_nav {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 #leaderboard_nav {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 .logo {
-    width: 182px;
-    height: 68.58px;
+  width: 182px;
+  height: 68.58px;
 }
 
 .logo img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #profile_select {
-    width: auto;
-    display: flex;
-    align-items: center;
+  width: auto;
+  display: flex;
+  align-items: center;
 }
 
 #profile_select > * {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 #nav_profile {
-    width: 46px;
-    height: 46px;
-    background-color: yellow;
-    border-radius: 25px;
+  width: 46px;
+  height: 46px;
+  background-color: yellow;
+  border-radius: 25px;
 }
 
 #nav_profile img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /*
-    Main section styling, includes the styling game area and setings section
+    Main section styling, includes the styling game area and settings section
 */
 
 .main_section {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 95vw;
-    height: auto;
-    position: absolute;
-    top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95vw;
+  height: auto;
+  position: absolute;
+  top: 150px;
 }
 
 #chess_board {
-    width: 500px;
-    height: 500px;
-    background-color: var(--navbar_white);
-    float: left;
+  width: 500px;
+  height: 500px;
+  background-color: var(--navbar_white);
+  float: left;
 }
 
 /*
-    Settings section
+    Settings/options section
 */
 
 #settings {
-    width: 500px;
-    height: 500px;
-    background-color: var(--navbar_white);
-    border-radius: 30px;
-    float: right;
+  width: 500px;
+  height: 500px;
+  background-color: var(--navbar_white);
+  border-radius: 30px;
+  float: right;
 }
 
 .user_name {
-    margin: 0 40px 0 40px;
+  margin: 0 40px 0 40px;
 }
 
 .timer {
-    font-size: 1.5rem;
-    height: max-content;
-    position: relative;
+  font-size: 1.5rem;
+  height: max-content;
+  position: relative;
 }
 
 #timer_user_1 {
-    right: 20px;
+  right: 20px;
 }
 
 #timer_user_2 {
-    left: 20px;
+  left: 20px;
 }
 
 #profile_div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
 }
 
 .profile_picture {
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
-    background-color: #000;
-    float: left;
-    margin: 20px 25px;
-    position: relative;
-    top: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  background-color: #000;
+  float: left;
+  margin: 20px 25px;
+  position: relative;
+  top: 10px;
 }
 
 #versus_text {
-    font-size: 2rem;
-    font-weight: 500;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .divider {
-    width: 90%;
-    height: 3px;
-    background-color: var(--flat_dark);
-    position: relative;
-    top: 50px;
-    margin: auto;
+  width: 90%;
+  height: 3px;
+  background-color: var(--flat_dark);
+  position: relative;
+  top: 50px;
+  margin: auto;
 }
 
 #options_div {
-    position: relative;
-    top: 60px;
-    width: 100%;
-    height: 70px;
-    justify-content: center;
+  position: relative;
+  top: 60px;
+  width: 100%;
+  height: 70px;
+  justify-content: center;
 }
 
 .options_text {
-    margin: 0;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 500;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 #mode_div {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #mode_text {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .mode_option {
-    border: 0;
-    color: black;
-    background-color: transparent;
-    width: max-content;
-    border-radius: 5px;
-    font-family: encodeSans, 'Encode Sans', sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
+  border: 0;
+  color: black;
+  background-color: transparent;
+  width: max-content;
+  border-radius: 5px;
+  font-family: encodeSans, "Encode Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 #theme_div {
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #theme_text {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .theme_option {
-    border: 0;
-    color: black;
-    background-color: transparent;
-    width: max-content;
-    border-radius: 5px;
-    font-family: encodeSans, 'Encode Sans', sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
+  border: 0;
+  color: black;
+  background-color: transparent;
+  width: max-content;
+  border-radius: 5px;
+  font-family: encodeSans, "Encode Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 #start_div {
-    position: relative;
-    top: 200px;
-    width: max-content;
-    height: max-content;
-    margin: auto;
+  position: relative;
+  top: 200px;
+  width: max-content;
+  height: max-content;
+  margin: auto;
 }
 
 #start_div input {
-    background-color: green;
-    border: 0;
-    color: var(--navbar_white);
-    border-radius: 5px;
-    font-family: encodeSans, 'Encode Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: 500;
-    width: 85px;
+  background-color: green;
+  border: 0;
+  color: var(--navbar_white);
+  border-radius: 5px;
+  font-family: encodeSans, "Encode Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  width: 85px;
 }
 
-/*
-    Chessboard
-*/
-
 .cell {
-    width: 62.5px;
-    height: 62.5px;
-    position: relative;
-    top: 0px;
-    float: left;
+  width: 62.5px;
+  height: 62.5px;
+  position: relative;
+  top: 0px;
+  float: left;
 }
 
 .light {
-    background-color: white;
+  background-color: white;
 }
 
 .dark {
-    background-color: black;
+  background-color: black;
 }
 
 /* 
@@ -342,82 +340,82 @@ body {
 */
 
 footer {
-    position: absolute;
-    top: 750px;
-    width: 100%;
-    height: 230px;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px 0 0 0;
-    margin-bottom: 0px;
+  position: absolute;
+  top: 750px;
+  width: 100%;
+  height: 230px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0 0 0;
+  margin-bottom: 0px;
 }
 
 #footer_logo {
-    filter: brightness(0);
-    display: flex;
-    justify-content: center;
-    margin: 0 0 30px 0;
+  filter: brightness(0);
+  display: flex;
+  justify-content: center;
+  margin: 0 0 30px 0;
 }
 
 #address p {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0 0 10px 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 10px 0;
 }
 
 .footer_element {
-    margin: 0 10px;
-    width: 200px;
-    height: 100%;
-    display: block;
+  margin: 0 10px;
+  width: 200px;
+  height: 100%;
+  display: block;
 }
 
 #copyright {
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 10px;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
 }
 
 .support_link {
-    margin: 10px 0 0 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+  margin: 10px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .support_link a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .support_link a:visited {
-    color: none;
+  color: none;
 }
 
 .support_link a:hover {
-    color: var(--subtle_pink);
+  color: var(--subtle_pink);
 }
 
 .social_media {
-    width: 25px;
-    height: 25px;
-    border-radius: 15px;
-    margin: 0 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  margin: 0 5px;
 }
 
 #contact_container {
-    width: 100%;
-    height: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer_header {
-    font-size: 1.8rem;
-    margin: 0 0 30px 0;
-    display: flex;
-    justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 0 30px 0;
+  display: flex;
+  justify-content: center;
 }
