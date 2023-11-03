@@ -1,6 +1,7 @@
 :root {
     font-size: 16px;
     --navbar_white : #fff8f6;
+    --ash: #7a7a7a;
     --navbar_white_transparent: rgba(255, 248, 246, 0.95);
     --new_green: #f8fff6;
     --new_blue: #f6fdff;
@@ -21,7 +22,7 @@
 }
 
 body {
-    background-color: var(--navbar_white);
+    background-color: var(--mustard_yellow);
     overflow: auto;
     font-size: 16px;
     font-family: encodeSans, 'Encode Sans', sans-serif;
@@ -56,7 +57,7 @@ body {
     font-size: 1rem;
     text-decoration: none;
     font-weight: 600;
-    transition: color ease-in 0.25s;
+    transition: color ease-in 0.15s;
 }
 
 .nav_link a:visited {
@@ -71,6 +72,7 @@ body {
     font-size: 1rem;
     text-decoration: none;
     font-weight: 600;
+    transition: color ease-in 0.15s;
 }
 
 #profile_select a:visited{
@@ -146,7 +148,7 @@ body {
 .main_div {
     width: 800px;
     height: 500px;
-    background-color: red;
+    background-color: white;
     margin: 120px auto 0 auto;
     border-radius: 50px;
 }
@@ -154,31 +156,9 @@ body {
 .art_div {
     width: 450px;
     height: 500px;
-    background-color: aqua;
     margin-left: 350px;
     border-radius: 50px;
-}
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#footer p {
-    font-size: 0.8rem;
-}
-
-.form_header {
-    position: absolute;
-    top: 130px;
-    left: 300px;
-    font-size: 1.6rem;
+    overflow: hidden;
 }
 
 form {
@@ -200,7 +180,7 @@ label {
 }
 
 .form_div:focus-within > label {
-    color: white;
+    color: var(--mustard_yellow);
 }
 
 input {
@@ -212,7 +192,7 @@ input {
 
 input:focus {
     outline: 0px;
-    border-bottom: 1px white solid;
+    border-bottom: 1px var(--mustard_yellow) solid;
 }
 
 .form_div {
@@ -243,5 +223,31 @@ input:focus {
 }
 
 #have_an_account a:hover {
-    color: var(--subtle_pink);
+    color: var(--mustard_yellow);
+}
+
+/*
+    Footer Section Styling
+*/
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer p {
+    font-size: 0.8rem;
+}
+
+.form_header {
+    position: absolute;
+    top: 130px;
+    left: 300px;
+    font-size: 1.6rem;
 }
