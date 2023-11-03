@@ -153,7 +153,7 @@ body {
 
 #hero_section {
     position: absolute;
-    top: 140px;
+    top: 170px;
     width: 47.5vw;
     height: auto;
     left: 1vw;
@@ -167,6 +167,11 @@ body {
     border-radius: 25px;
     padding: 0px;
     background: url(../assests/images/play_btn_bg_main.png);
+    box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.8);
+}
+
+#play_carousel:hover {
+    background: url(../assests/images/play_btn_bg_main-dark.png);
 }
 
 #play_carousel img {
@@ -184,15 +189,15 @@ body {
 }
 
 #play_btn_text {
-    top: 280px;
+    top: 300px;
     left: 15px;
-    color: white;
+    color: var(--dark_blue);
     width: max-content;
 }
 
 #mid_section {
     position: absolute;
-    top: 140px;
+    top: 170px;
     width: 47.5vw;
     height: 500px;
     right: 1vw;
@@ -226,6 +231,7 @@ body {
     border-radius: 25px;
     background: url(../assests/images/btn_card_bg_light.png);
     margin-bottom: 30px;
+    box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.8);
 }
 
 #how-to_btn {
@@ -234,6 +240,7 @@ body {
     height: 200px;
     border-radius: 25px;
     background: url(../assests/images/btn_card_bg_how-light.png);
+    box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.8);
 }
 
 .btn_card {
@@ -241,7 +248,7 @@ body {
 }
 
 #how-to_btn:hover, #about_btn:hover, #play_carousel:hover {
-    outline: var(--dark_blue) solid 2px;
+    outline: var(--subtle_pink) solid 5px;
     outline-offset: 3px;
     scale: 1.01;
 }
@@ -376,7 +383,7 @@ body {
 
 footer {
     position: absolute;
-    top: 1300px;
+    top: 1200px;
     width: 100%;
     height: 230px;
     display: flex;
@@ -420,10 +427,22 @@ footer {
     justify-content: center;
 }
 
+.support_link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.support_link a:visited {
+    color: none;
+}
+
+.support_link a:hover {
+    color: var(--subtle_pink);
+}
+
 .social_media {
     width: 25px;
     height: 25px;
-    background-color: black;
     border-radius: 15px;
     margin: 0 5px;
 }

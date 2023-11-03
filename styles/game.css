@@ -330,11 +330,11 @@ body {
 }
 
 .light {
-    background-color: yellow;
+    background-color: white;
 }
 
 .dark {
-    background-color: brown;
+    background-color: black;
 }
 
 /* 
@@ -387,10 +387,22 @@ footer {
     justify-content: center;
 }
 
+.support_link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.support_link a:visited {
+    color: none;
+}
+
+.support_link a:hover {
+    color: var(--subtle_pink);
+}
+
 .social_media {
     width: 25px;
     height: 25px;
-    background-color: black;
     border-radius: 15px;
     margin: 0 5px;
 }

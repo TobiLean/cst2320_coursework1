@@ -1,6 +1,8 @@
 var modes = Array.from(document.getElementsByClassName("mode_option"));
 var themes = Array.from(document.getElementsByClassName("theme_option"));
 var start_end = document.getElementById("start_end_btn");
+var cells_light = Array.from(document.getElementsByClassName("cell light"));
+var cells_dark = Array.from(document.getElementsByClassName("cell dark"));
 
 modes[0].addEventListener("click", ()=>{
 
@@ -50,6 +52,14 @@ themes[0].addEventListener("click", ()=>{
     themes[0].setAttribute("style", "border: 1px solid #072541;");
     themes[1].setAttribute("style", "border: 0");
     themes[2].setAttribute("style", "border: 0");
+
+    for(i=0; i<cells_light.length; i++){
+        cells_light[i].setAttribute("style", "background-color: white");
+    }
+
+    for(i=0; i<cells_dark.length; i++){
+        cells_dark[i].setAttribute("style", "background-color: black");
+    }
 })
 
 themes[1].addEventListener("click", ()=>{
@@ -62,6 +72,14 @@ themes[1].addEventListener("click", ()=>{
     themes[1].setAttribute("style", "border: 1px solid #072541;");
     themes[0].setAttribute("style", "border: 0");
     themes[2].setAttribute("style", "border: 0");
+
+    for(i=0; i<cells_light.length; i++){
+        cells_light[i].setAttribute("style", "background-color: #92ef67");
+    }
+
+    for(i=0; i<cells_dark.length; i++){
+        cells_dark[i].setAttribute("style", "background-color: #00682c");
+    }
 })
 
 themes[2].addEventListener("click", ()=>{
@@ -74,6 +92,14 @@ themes[2].addEventListener("click", ()=>{
     themes[2].setAttribute("style", "border: 1px solid #072541;");
     themes[1].setAttribute("style", "border: 0");
     themes[0].setAttribute("style", "border: 0");
+
+    for(i=0; i<cells_light.length; i++){
+        cells_light[i].setAttribute("style", "background-color: white");
+    }
+
+    for(i=0; i<cells_dark.length; i++){
+        cells_dark[i].setAttribute("style", "background-color: #ff6699");
+    }
 })
 
 start_end.addEventListener("click", (event)=>{

@@ -51,6 +51,7 @@ body {
 #navigation_div, footer {
     background-color: white;
     color: #000;
+    z-index: 2;
 }
 
 #navigation_div, footer, .nav_link a, #profile_select a {
@@ -169,7 +170,7 @@ button {
     width: max-content;
     min-width: 90px;
     height: 25px;
-    background-color: var(--mustard_yellow);
+    background-color: var(--dark_blue);
     margin: 0 0 0 20px;
     border: 0;
     border-radius: 3px;
@@ -178,6 +179,7 @@ button {
     z-index: 1;
     padding: 0;
     font-weight: 500;
+    color: white;
 }
 
 .filter_btn:focus .drop_down {
@@ -189,6 +191,7 @@ button {
 }
 
 .drop_down {
+    color: #000;
     width: 70px;
     height: 0px;
     background-color: white;
@@ -228,10 +231,12 @@ button {
 table {
     color: black;
     border-collapse: collapse;
+    background-color: var(--mustard_yellow);
 }
 
 thead {
     background-color: var(--mustard_yellow);
+    border-bottom: 10px solid white;
 }
 
 th {
@@ -243,8 +248,12 @@ tbody tr {
     border-bottom: 1px solid black;
 }
 
+/* tbody tr:last-of-type td {
+    margin-bottom: 20px;
+} */
+
 td {
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 /* 
@@ -297,10 +306,22 @@ footer {
     justify-content: center;
 }
 
+.support_link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.support_link a:visited {
+    color: none;
+}
+
+.support_link a:hover {
+    color: var(--subtle_pink);
+}
+
 .social_media {
     width: 25px;
     height: 25px;
-    background-color: black;
     border-radius: 15px;
     margin: 0 5px;
 }
