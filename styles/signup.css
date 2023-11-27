@@ -208,7 +208,7 @@ input:focus {
   margin-top: 30px;
 }
 
-#continue_btn {
+#continue_btn, #login_continue_btn {
   margin-top: 25px;
   border: 0;
   border-radius: 7px;

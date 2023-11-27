@@ -3,8 +3,11 @@ var lName = document.getElementById("lastname");
 var email = document.getElementById("email");
 var uName = document.getElementById("username");
 var pWord = document.getElementById("password");
+
 var fNameDiv = document.getElementById("firstname_div");
 var lNameDiv = document.getElementById("lastname_div");
+var uNameDiv = document.getElementById("username_div");
+var pWordDiv = document.getElementById("password_div");
 var contBtn = document.getElementById("continue_btn");
 var loginContBtn = document.getElementById("login_continue_btn");
 var body = document.getElementsByTagName("body");
@@ -18,21 +21,6 @@ var logged;
 var userExist;
 var newUser = {};
 
-// contBtn.addEventListener("click", ()=>{
-//     checkName(fName, fNameDiv);
-//     checkName(lName, lNameDiv);
-//     checkPassword(pWord);
-//     checkUserName();
-
-//     if (name_is_correct == true && passwordCheck == true && username_is_correct == true){
-//         storeData();
-//     }
-//     else{
-//         console.log("baddd")
-//     }
-    
-// })
-
 contBtn.addEventListener("click", (event)=>{
 
     event.preventDefault();
@@ -40,15 +28,15 @@ contBtn.addEventListener("click", (event)=>{
 
     checkName(fName, fNameDiv);
     checkName(lName, lNameDiv);
-    checkPassword(pWord);
-    checkUserName();
+    checkUserName(uNameDiv);
+    checkPassword(pWord, pWordDiv);
 
     if (name_is_correct == true && passwordCheck == true && username_is_correct == true){
-        console.log("-----everything working!!!");
+        console.log("--trying to store data--");
         storeData();
     }
     else{
-        console.log("baddd");
+        console.log("--Error check data entered--");
     }
 
 })
@@ -80,18 +68,19 @@ function checkName(x, warningParent) {
     }
 }
 
-function checkUserName() {
+function checkUserName(warningParent) {
     if(uName.value.length >= 8){
         console.log("Correct User name")
         username_is_correct = true;
     }
     else{
         console.log("Wrong User name")
+        warningMsg("Must be more than 8 characters", warningParent);
         username_is_correct = false;
     }
 }
 
-function checkPassword(x) {
+function checkPassword(x, warningParent) {
     var pWordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     
     if(pWordRegExp.test(x.value)){
@@ -103,6 +92,7 @@ function checkPassword(x) {
     else {
         passwordCheck = false;
         console.log(`Good password: ${passwordCheck}`)
+        warningMsg("Requires: Special character, uppercase, lowercase, at least 8 characters", warningParent);
     }
 }
 
@@ -124,7 +114,7 @@ function warningMsg(message, parent) {
 
     setTimeout(()=>{
         setTimeout(warnTag.remove(), 300);
-    }, 1000);
+    }, 2000);
 
 }
 
@@ -135,7 +125,15 @@ function checkUserExist(){
         }
         else{
             userExist = true;
-            console.log("user exists already")
+            console.log("--user exists already--")
+        }
+
+        if(JSON.parse(localStorage.getItem("user_details"))[i].username != newUser.username){
+            userExist = false;
+        }
+        else{
+            userExist = true;
+            console.log("--user exists already--")
         }
     }
 }
@@ -162,6 +160,7 @@ function storeData(){
         localStorage.setItem("user_details", JSON.stringify(users));
         console.log(newUser.userEmail);
         console.log(JSON.parse(localStorage.getItem("user_details"))[0].userEmail);
+        console.log("--successfully stored user!--");
     }
     else{
 
@@ -174,6 +173,11 @@ function storeData(){
             localStorage.setItem("user_details", JSON.stringify(users));
             console.log(newUser.userEmail);
             console.log(JSON.parse(localStorage.getItem("user_details"))[0].userEmail);
+            console.log("--successfully stored user!--");
+        }
+        else{
+            console.log("--cannot store user!--")
+            alert("--cannot store user!--")
         }
     }
 }
