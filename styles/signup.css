@@ -181,6 +181,7 @@ label {
 
 .form_div {
   pointer-events: none;
+  height: 40px;
 }
 
 .form_div > * {

@@ -83,6 +83,8 @@ themes[1].addEventListener("click", () => {
   for (i = 0; i < cells_dark.length; i++) {
     cells_dark[i].setAttribute("style", "background-color: #00682c");
   }
+
+  console.log("Test 100")
 });
 
 //checks for button click on third theme button and runs a function
