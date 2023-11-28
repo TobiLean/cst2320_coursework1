@@ -8,11 +8,12 @@ var fNameDiv = document.getElementById("firstname_div");
 var lNameDiv = document.getElementById("lastname_div");
 var uNameDiv = document.getElementById("username_div");
 var pWordDiv = document.getElementById("password_div");
+var body = document.getElementsByTagName("body");
+
 var contBtn = document.getElementById("continue_btn");
 var loginContBtn = document.getElementById("login_continue_btn");
-var body = document.getElementsByTagName("body");
+
 var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-// var users = [];
 var passwordCheck;
 var nameHasNumber;
 var name_is_correct;
@@ -20,9 +21,12 @@ var username_is_correct;
 var logged;
 var userExist;
 var newUser = {};
+var loggedUserNum = 0;
 
-contBtn.addEventListener("click", (event)=>{
+var navBarSignup = document.getElementById("navbar_signup");
+var navProfileName = document.getElementById("nav_profile_name");
 
+function signUp (event){
     event.preventDefault();
     event.stopPropagation();
 
@@ -38,8 +42,7 @@ contBtn.addEventListener("click", (event)=>{
     else{
         console.log("--Error check data entered--");
     }
-
-})
+}
 
 function checkName(x, warningParent) {
     if(x.value != "" && x.value != " "){
@@ -118,24 +121,47 @@ function warningMsg(message, parent) {
 
 }
 
-function checkUserExist(){
-    for (let i = 0; i < JSON.parse(localStorage.getItem("user_details")).length; i++) {
-        if(JSON.parse(localStorage.getItem("user_details"))[i].userEmail != newUser.userEmail){
-            userExist = false;
-        }
-        else{
-            userExist = true;
-            console.log("--user exists already--")
-        }
+function checkUserExist(typeOfUser="signup"){
 
-        if(JSON.parse(localStorage.getItem("user_details"))[i].username != newUser.username){
-            userExist = false;
-        }
-        else{
-            userExist = true;
-            console.log("--user exists already--")
+    if(typeOfUser == "login"){
+        for (let i = 0; i < JSON.parse(localStorage.getItem("user_details")).length; i++) {
+            if(JSON.parse(localStorage.getItem("user_details"))[i].username == uName.value){
+                userExist = true;
+            }
+            else{
+                userExist = false;
+                console.log("--check user details--")
+            }
+
+            if(JSON.parse(localStorage.getItem("user_details"))[i].password == pWord.value){
+                userExist = true;
+            }
+            else{
+                userExist = false;
+                console.log("--check user details--")
+            }
         }
     }
+    else {
+        for (let i = 0; i < JSON.parse(localStorage.getItem("user_details")).length; i++) {
+            if(JSON.parse(localStorage.getItem("user_details"))[i].userEmail != newUser.userEmail){
+                userExist = false;
+            }
+            else{
+                userExist = true;
+                console.log("--user exists already--")
+            }
+    
+            if(JSON.parse(localStorage.getItem("user_details"))[i].username != newUser.username){
+                userExist = false;
+            }
+            else{
+                userExist = true;
+                console.log("--user exists already--")
+            }
+        }
+    }
+    
 }
 
 function storeData(){
@@ -182,6 +208,31 @@ function storeData(){
     }
 }
 
-// function login(){
-//     // if (uName.value == localStorage.getItem())
-// }
+function login(event){
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    checkUserExist("login");
+
+    if(userExist == true){
+
+        if(loggedUserNum <= 2){
+            console.log("--User Exist in storage!--");
+            alert("--Logged in successfully!--");
+
+            navBarSignup.style.display = "none";
+            navProfileName.innerHTML = uName.value;
+            navProfileName.style.display = "block";
+
+            logged = true;
+            loggedUserNum++;
+        }
+        else {
+            navBarSignup.style.display = "block";
+            navProfileName.innerHTML = "";
+            navProfileName.style.display = "none";
+            alert("--Logged out all users!--");
+        }
+    }
+}

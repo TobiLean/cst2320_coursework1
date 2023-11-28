@@ -32,7 +32,8 @@
         </div>
 
         <div id="profile_select">
-          <a href="./signup.html">Sign up</a>
+          <a id="navbar_signup" href="./signup.html">Sign up</a>
+          <a id="nav_profile_name" href="./signup.html">user</a>
           <div id="nav_profile">
             <img
               src="./assests/images/CuteChess_assets_profile_pic_1.png"
@@ -57,7 +58,7 @@
             <input type="password" id="password" required />
           </div>
 
-          <button id="login_continue_btn" type="submit">Continue ></button>
+          <button onclick="login(event)" id="login_continue_btn" type="submit">Continue ></button>
 
           <p id="have_an_account">
             don't have an account <a href="./signup.html">sign-up</a>
@@ -76,4 +77,6 @@
       <p>All Rights Reserved.</p>
     </section>
   </body>
+
+  <script src="./js/validation.js"></script>
 </html>
