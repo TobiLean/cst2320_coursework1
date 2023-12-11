@@ -178,6 +178,36 @@ footer,
   float: left;
 }
 
+.cell {
+  width: 62.5px;
+  height: 62.5px;
+  position: relative;
+  top: 0px;
+  float: left;
+}
+
+.light {
+  background-color: white;
+}
+
+.dark {
+  background-color: black;
+}
+
+.cell svg {
+  width: 56px;
+  height: 56px;
+  margin: 2px;
+}
+
+.dark_piece {
+  fill: #1b1338;
+}
+
+.light_piece {
+  fill: #aaaaaa;
+}
+
 /*
     Settings/options section
 */
@@ -317,22 +347,6 @@ footer,
   font-size: 2rem;
   font-weight: 500;
   width: 85px;
-}
-
-.cell {
-  width: 62.5px;
-  height: 62.5px;
-  position: relative;
-  top: 0px;
-  float: left;
-}
-
-.light {
-  background-color: white;
-}
-
-.dark {
-  background-color: black;
 }
 
 /* 

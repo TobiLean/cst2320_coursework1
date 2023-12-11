@@ -18,8 +18,8 @@ var passwordCheck;
 var nameHasNumber;
 var name_is_correct;
 var username_is_correct;
-var logged;
-var userExist;
+var allLogged;
+var userExist = false;
 var newUser = {};
 var loggedUserNum = 0;
 
@@ -125,20 +125,41 @@ function checkUserExist(typeOfUser="signup"){
 
     if(typeOfUser == "login"){
         for (let i = 0; i < JSON.parse(localStorage.getItem("user_details")).length; i++) {
-            if(JSON.parse(localStorage.getItem("user_details"))[i].username == uName.value){
+
+            var tempUser = JSON.parse(localStorage.getItem("user_details"))[i];
+            let tempName = tempUser.username;
+            let tempPWord = tempUser.password;
+
+            if(tempName == uName.value){
                 userExist = true;
+                tempUser.logged = true;
+                // localStorage.setItem("loggedUser1", tempName);
+                if (!localStorage.getItem("loggedUser1")){
+                    localStorage.setItem("loggedUser1", tempName);
+                    loggedUserNum++;
+                }
+                else if(!localStorage.getItem("loggedUser2") && uName.value != localStorage.getItem("loggedUser1")){
+                    localStorage.setItem("loggedUser2", tempName);
+                    loggedUserNum++;
+                }
+                else{
+                    loggedUserNum = 3;
+                    console.log(loggedUserNum);
+                }
             }
             else{
-                userExist = false;
-                console.log("--check user details--")
+                console.log("--check user details--");
+                console.log(tempName);
+
             }
 
-            if(JSON.parse(localStorage.getItem("user_details"))[i].password == pWord.value){
+            if(tempPWord == pWord.value){
                 userExist = true;
+                tempUser.logged = true;
             }
             else{
-                userExist = false;
-                console.log("--check user details--")
+                console.log("--check user details--");
+                console.log(tempPWord);
             }
         }
     }
@@ -171,7 +192,7 @@ function storeData(){
         lastname: lName.value.trim(),
         username: uName.value.trim(),
         userEmail: email.value.trim(),
-        password: pWord.value.trim()
+        password: pWord.value.trim(),
     }
 
     console.log(JSON.stringify(newUser));
@@ -179,7 +200,6 @@ function storeData(){
 
     if(JSON.parse(localStorage.getItem("user_details"))==null){
 
-        // localStorage.setItem("user_details", users);
         var users = [];
         
         users.push(newUser);
@@ -187,6 +207,7 @@ function storeData(){
         console.log(newUser.userEmail);
         console.log(JSON.parse(localStorage.getItem("user_details"))[0].userEmail);
         console.log("--successfully stored user!--");
+        alert("--successfully stored user!--");
     }
     else{
 
@@ -200,6 +221,7 @@ function storeData(){
             console.log(newUser.userEmail);
             console.log(JSON.parse(localStorage.getItem("user_details"))[0].userEmail);
             console.log("--successfully stored user!--");
+            alert("--successfully stored user!--");
         }
         else{
             console.log("--cannot store user!--")
@@ -217,7 +239,7 @@ function login(event){
 
     if(userExist == true){
 
-        if(loggedUserNum <= 2){
+        if(loggedUserNum < 3){
             console.log("--User Exist in storage!--");
             alert("--Logged in successfully!--");
 
@@ -225,14 +247,17 @@ function login(event){
             navProfileName.innerHTML = uName.value;
             navProfileName.style.display = "block";
 
-            logged = true;
-            loggedUserNum++;
+            // logged = true;
+            console.log(loggedUserNum);
         }
         else {
             navBarSignup.style.display = "block";
             navProfileName.innerHTML = "";
             navProfileName.style.display = "none";
             alert("--Logged out all users!--");
+            localStorage.removeItem("loggedUser1");
+            localStorage.removeItem("loggedUser2");
+            loggedUserNum = 0;
         }
     }
 }
