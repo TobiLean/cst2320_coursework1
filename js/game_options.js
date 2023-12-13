@@ -3,6 +3,21 @@ var themes = Array.from(document.getElementsByClassName("theme_option"));
 var start_end = document.getElementById("start_end_btn");
 var cells_light = Array.from(document.getElementsByClassName("cell light"));
 var cells_dark = Array.from(document.getElementsByClassName("cell dark"));
+// const pl1 = sessionStorage.getItem("loggedUser1");
+// const pl2 = sessionStorage.getItem("loggedUser1");
+
+
+function checkPlayer (){
+  if(player1 !=null){
+    document.getElementsByClassName("user_name")[0].innerHTML = player1;
+  }
+
+  if(player2 !=null){
+    document.getElementsByClassName("user_name")[1].innerHTML = player2;
+  }
+}
+
+checkPlayer()
 
 //checks for button click on first mode button and runs a function
 modes[0].addEventListener("click", () => {

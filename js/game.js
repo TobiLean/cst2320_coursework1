@@ -1,7 +1,16 @@
 const cells = document.querySelectorAll(".cell");
+const startBtn = document.getElementById("start_end_btn")
+const player1 = sessionStorage.getItem("loggedUser1");
+const player2 = sessionStorage.getItem("loggedUser2");
+const kings = Array.from(document.querySelectorAll("#king_piece"))
+let user_details = JSON.parse(localStorage.getItem("user_details"))
+console.log(user_details)
+
+// console.log(user_details.find(obj => obj.username === player1).lastname)
+
 let startPos;
 let draggedPiece;
-let playerTurn = 'dark_piece'
+let playerTurn = 'light_piece'
 console.log(playerTurn + "'s turn");
 
 const INITIAL_PIECE_POSITION = [
@@ -23,19 +32,6 @@ const columns = [
 const rows = [
     8, 7, 6, 5, 4, 3, 2, 1
 ];
-
-function range(start, end) {
-    var ans = [];
-    for (let i = start; i <= end; i++) {
-        ans.push(i);
-    }
-    return ans;
-}
-
-var cow = [1, 2, 3]
-
-console.log(cow.forEach((i)=>{return i}));
-console.log(range(1,4).forEach((el)=>{return el}))
 
 function setPieces() {
     INITIAL_PIECE_POSITION.forEach((el, i) => {
@@ -64,8 +60,59 @@ function setCellId(){
     })
 }
 
-setCellId();
-setPieces();
+function startGame (){
+    const kings = Array.from(document.querySelectorAll("#king_piece"))
+    var gameStarted;
+    if(startBtn.value=="Start"){
+        setCellId();
+        setPieces();
+        gameStarted = true;
+    }
+
+    if(
+        startBtn.value=="End" && kings.some(king => king.firstChild.classList.contains("dark_piece"))
+        && kings.some(king => king.firstChild.classList.contains("light_piece"))
+        ){
+            if(user_details.find(obj => obj.username === player1).draw == null)
+            {
+                user_details.find(obj => obj.username === player1).draw = 1
+            }else{
+                user_details.find(obj => obj.username === player1).draw += 1
+            }
+
+            if(user_details.find(obj => obj.username === player2).draw == null)
+            {
+                user_details.find(obj => obj.username === player2).draw = 1
+            }else{
+                user_details.find(obj => obj.username === player2).draw += 1
+            }
+
+            if(user_details.find(obj => obj.username === player1).matches == null){
+                user_details.find(obj => obj.username === player1).matches = 1
+            } else{
+                user_details.find(obj => obj.username === player1).matches += 1
+            }
+
+            if(user_details.find(obj => obj.username === player2).matches == null){
+                user_details.find(obj => obj.username === player2).matches = 1
+            } else{
+                user_details.find(obj => obj.username === player2).matches += 1
+            }
+
+            localStorage.setItem("user_details", JSON.stringify(user_details))
+
+            setCellId();
+            setPieces();
+            console.log("draw")
+    }
+
+    if(startBtn.value=="End"){
+        cells.forEach(cell=> cell.innerHTML="")
+        playerTurn = 'light_piece'
+    }
+}
+
+
 
 cells.forEach(cell => {
     cell.addEventListener('dragstart', dragPiece);
@@ -86,7 +133,7 @@ function dragDrop(el){
     el.stopPropagation()
 
     const correctTurn = draggedPiece.firstChild.classList.contains(playerTurn);
-    const oppTurn = playerTurn === "light_piece" ? "dark_piece" : "light_piece"
+    const oppTurn = playerTurn === "dark_piece" ? "light_piece" : "dark_piece"
     const occupied = el.target.classList.contains("chess_piece");
     const occupiedByOpponent = el.target.firstChild?.classList.contains(oppTurn);
     const validMove = checkValidMove(el.target);
@@ -96,6 +143,7 @@ function dragDrop(el){
             el.target.parentNode.append(draggedPiece);
             el.target.remove();
             
+            checkWin();
             changePlayerTurn();
             return;
         }
@@ -107,6 +155,7 @@ function dragDrop(el){
 
         if(validMove){
             el.target.append(draggedPiece);
+            checkWin();
             changePlayerTurn();
             return
         }
@@ -400,15 +449,176 @@ function checkValidMove(target){
             ){
                 return true
             }
+            break;
+        case 'queen_piece' :
+            if(
+                //Diagonal movement
+                (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)+1 && Number(targetId[1]) == Number(startPos[1]) +1)
+                || checkForSpace(2, "bs_pc", "tr")
+                || checkForSpace(3, "bs_pc", "tr")
+                || checkForSpace(4, "bs_pc", "tr")
+                || checkForSpace(5, "bs_pc", "tr")
+                || checkForSpace(6, "bs_pc", "tr")
+                || checkForSpace(7, "bs_pc", "tr")
+                //-x -y movement
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)-1 && Number(targetId[1]) == Number(startPos[1]) -1)
+                || checkForSpace(2, "bs_pc", "bl")
+                || checkForSpace(3, "bs_pc", "bl")
+                || checkForSpace(4, "bs_pc", "bl")
+                || checkForSpace(5, "bs_pc", "bl")
+                || checkForSpace(6, "bs_pc", "bl")
+                || checkForSpace(7, "bs_pc", "bl")
+                //+x -y movement
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)+1 && Number(targetId[1]) == Number(startPos[1]) -1)
+                || checkForSpace(2, "bs_pc", "br")
+                || checkForSpace(3, "bs_pc", "br")
+                || checkForSpace(4, "bs_pc", "br")
+                || checkForSpace(5, "bs_pc", "br")
+                || checkForSpace(6, "bs_pc", "br")
+                || checkForSpace(7, "bs_pc", "br")
+                //-x +y movement
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)-1 && Number(targetId[1]) == Number(startPos[1]) +1)
+                || checkForSpace(2, "bs_pc", "tl")
+                || checkForSpace(3, "bs_pc", "tl")
+                || checkForSpace(4, "bs_pc", "tl")
+                || checkForSpace(5, "bs_pc", "tl")
+                || checkForSpace(6, "bs_pc", "tl")
+                || checkForSpace(7, "bs_pc", "tl")
+                //Movement along the y axis but x is constant
+                //check for upward movement (+y)
+                || targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) && Number(targetId[1]) == Number(startPos[1]) +1
+                || checkForSpace(2, "rk_pc", "up")
+                || checkForSpace(3, "rk_pc", "up")
+                || checkForSpace(4, "rk_pc", "up")
+                || checkForSpace(5, "rk_pc", "up")
+                || checkForSpace(6, "rk_pc", "up")
+                || checkForSpace(7, "rk_pc", "up")
+                //check for downward movement (-y)
+                || targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) && (Number(targetId[1]) == Number(startPos[1]) -1)
+                || checkForSpace(2, "rk_pc", "down")
+                || checkForSpace(3, "rk_pc", "down")
+                || checkForSpace(4, "rk_pc", "down")
+                || checkForSpace(5, "rk_pc", "down")
+                || checkForSpace(6, "rk_pc", "down")
+                || checkForSpace(7, "rk_pc", "down")
+                //Movement along the x axis but y is constant
+                //check for right-ward movement
+                || Number(targetId[1]) == Number(startPos[1]) && (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) + 1)
+                || checkForSpace(2, "rk_pc", "right")
+                || checkForSpace(3, "rk_pc", "right")
+                || checkForSpace(4, "rk_pc", "right")
+                || checkForSpace(5, "rk_pc", "right")
+                || checkForSpace(6, "rk_pc", "right")
+                || checkForSpace(7, "rk_pc", "right")
+                //check for left-ward movement (-x)
+                || Number(targetId[1]) == Number(startPos[1]) && (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) - 1)
+                || checkForSpace(2, "rk_pc", "left")
+                || checkForSpace(3, "rk_pc", "left")
+                || checkForSpace(4, "rk_pc", "left")
+                || checkForSpace(5, "rk_pc", "left")
+                || checkForSpace(6, "rk_pc", "left")
+                || checkForSpace(7, "rk_pc", "left")
+            ){
+                return true
+            }
+            break;
+        case 'king_piece' :
+            if(
+                //up-down movement
+                (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) && (Number(targetId[1]) == Number(startPos[1]) +1)
+                || (Number(targetId[1]) == Number(startPos[1]) -1))
+                //left-right movement
+                || (Number(targetId[1]) == Number(startPos[1]) && (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) + 1)
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) - 1))
+                //diagonal movement
+                //+x+y movement
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)+1 && Number(targetId[1]) == Number(startPos[1]) +1)
+                //-x-y movement
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)-1 && Number(targetId[1]) == Number(startPos[1]) -1)
+                //+x-y movement
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)+1 && Number(targetId[1]) == Number(startPos[1]) -1)
+                //-x+y movement
+                || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)-1 && Number(targetId[1]) == Number(startPos[1]) +1)
+            ){
+                return true
+            }
     }
 }
 
 function changePlayerTurn(){
-    if (playerTurn == "dark_piece"){
-        playerTurn = "light_piece"
+    if (playerTurn == "light_piece"){
+        playerTurn = "dark_piece"
         console.log(playerTurn + "'s turn");
     } else {
-        playerTurn = "dark_piece";
+        playerTurn = "light_piece";
         console.log(playerTurn + "'s turn");
+    }
+}
+
+function checkWin(){
+    const kings = Array.from(document.querySelectorAll("#king_piece"))
+
+    if(!kings.some(king => king.firstChild.classList.contains("light_piece"))){
+        alert("black wins");
+
+        if(user_details.find(obj => obj.username === player2).win == null)
+        {
+            user_details.find(obj => obj.username === player2).win = 1
+        }else{
+            user_details.find(obj => obj.username === player2).win += 1
+        }
+
+        if(user_details.find(obj => obj.username === player1).loss == null){
+            user_details.find(obj => obj.username === player1).loss = 1
+        }else{
+            user_details.find(obj => obj.username === player1).loss +=1
+        }
+
+        if(user_details.find(obj => obj.username === player1).matches == null){
+            user_details.find(obj => obj.username === player1).matches = 1
+        }else{
+            user_details.find(obj => obj.username === player1).matches += 1
+        }
+
+        if(user_details.find(obj => obj.username === player2).matches == null){
+            user_details.find(obj => obj.username === player2).matches = 1
+        }else{
+            user_details.find(obj => obj.username === player2).matches += 1
+        }
+
+        cells.forEach(cell => cell.firstChild?.setAttribute("draggable", false));
+        localStorage.setItem("user_details", JSON.stringify(user_details))
+    }
+
+    if(!kings.some(king => king.firstChild.classList.contains("dark_piece"))){
+        alert("white wins");
+
+        if(user_details.find(obj => obj.username === player1).win == null)
+        {
+            user_details.find(obj => obj.username === player1).win = 1
+        }else{
+            user_details.find(obj => obj.username === player1).win += 1
+        }
+
+        if(user_details.find(obj => obj.username === player2).loss == null){
+            user_details.find(obj => obj.username === player2).loss = 1
+        }else{
+            user_details.find(obj => obj.username === player2).loss +=1
+        }
+
+        if(user_details.find(obj => obj.username === player1).matches == null){
+            user_details.find(obj => obj.username === player1).matches = 1
+        }else{
+            user_details.find(obj => obj.username === player1).matches += 1
+        }
+
+        if(user_details.find(obj => obj.username === player2).matches == null){
+            user_details.find(obj => obj.username === player2).matches = 1
+        }else{
+            user_details.find(obj => obj.username === player2).matches += 1
+        }
+
+        cells.forEach(cell => cell.firstChild?.setAttribute("draggable", false));
+        localStorage.setItem("user_details", JSON.stringify(user_details))
     }
 }

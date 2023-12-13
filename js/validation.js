@@ -134,12 +134,12 @@ function checkUserExist(typeOfUser="signup"){
                 userExist = true;
                 tempUser.logged = true;
                 // localStorage.setItem("loggedUser1", tempName);
-                if (!localStorage.getItem("loggedUser1")){
-                    localStorage.setItem("loggedUser1", tempName);
+                if (!sessionStorage.getItem("loggedUser1")){
+                    sessionStorage.setItem("loggedUser1", tempName);
                     loggedUserNum++;
                 }
-                else if(!localStorage.getItem("loggedUser2") && uName.value != localStorage.getItem("loggedUser1")){
-                    localStorage.setItem("loggedUser2", tempName);
+                else if(!sessionStorage.getItem("loggedUser2") && uName.value != sessionStorage.getItem("loggedUser1")){
+                    sessionStorage.setItem("loggedUser2", tempName);
                     loggedUserNum++;
                 }
                 else{
@@ -255,8 +255,8 @@ function login(event){
             navProfileName.innerHTML = "";
             navProfileName.style.display = "none";
             alert("--Logged out all users!--");
-            localStorage.removeItem("loggedUser1");
-            localStorage.removeItem("loggedUser2");
+            sessionStorage.removeItem("loggedUser1");
+            sessionStorage.removeItem("loggedUser2");
             loggedUserNum = 0;
         }
     }
