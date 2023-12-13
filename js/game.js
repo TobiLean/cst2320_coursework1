@@ -122,7 +122,8 @@ function checkValidMove(target){
     console.log('piece ', piece);
 
     function checkForSpace(i, pieceType, direction="tr"||"br"||"bl"||"tl"||"up"||"down"||"right"||"left"){
-        var piecesPresent = 0;
+        var piecesPresentBs = 0;
+        var piecesPresentRk = 0;
 
         if(pieceType == "bs_pc")
             {if(direction=="tr"){
@@ -133,13 +134,13 @@ function checkValidMove(target){
                         if(
                             document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-(index))}`+`${Number(targetId[1])-(index)}"]`).firstChild
                         ){
-                            piecesPresent++;
+                            piecesPresentBs++;
                         }
                     }
-                    if(piecesPresent == 0){
+                    if(piecesPresentBs == 0){
                         return true
                     }else{
-                        console.log(piecesPresent)
+                        console.log(piecesPresentBs)
                     }
                 }
             }
@@ -152,13 +153,13 @@ function checkValidMove(target){
                         if(
                             document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-(index))}`+`${Number(targetId[1])+(index)}"]`).firstChild
                         ){
-                            piecesPresent++;
+                            piecesPresentBs++;
                         }
                     }
-                    if(piecesPresent == 0){
+                    if(piecesPresentBs == 0){
                         return true
                     }else{
-                        console.log(piecesPresent)
+                        console.log(piecesPresentBs)
                     }
                 }
             }
@@ -171,13 +172,13 @@ function checkValidMove(target){
                         if(
                             document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+(index))}`+`${Number(targetId[1])+(index)}"]`).firstChild
                         ){
-                            piecesPresent++;
+                            piecesPresentBs++;
                         }
                     }
-                    if(piecesPresent == 0){
+                    if(piecesPresentBs == 0){
                         return true
                     }else{
-                        console.log(piecesPresent)
+                        console.log(piecesPresentBs)
                     }
                 }
             }
@@ -190,26 +191,90 @@ function checkValidMove(target){
                         if(
                             document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+(index))}`+`${Number(targetId[1])-(index)}"]`).firstChild
                         ){
-                            piecesPresent++;
+                            piecesPresentBs++;
                         }
                     }
-                    if(piecesPresent == 0){
+                    if(piecesPresentBs == 0){
                         return true
                     }else{
-                        console.log(piecesPresent)
+                        console.log(piecesPresentBs)
                     }
                 }
             }
         }
 
         if (pieceType == "rk_pc"){
-            if(targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)){
-                if(Number(targetId[1]) == Number(startPos[1]) +i){
-                    for (let index = 1; index.Math.abs(i); index++){
-                        if(
-                            !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-1}"]`).firstChild
-                        ){
-                            piecesPresent++
+            if(direction=="up"){
+                if(targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)){
+                    if(Number(targetId[1]) == Number(startPos[1]) +i){
+                        for (let index = 1; index < Math.abs(i); index++){
+                            if(
+                                document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-index}"]`).firstChild
+                            ){
+                                piecesPresentRk++
+                            }
+                        }
+                        if(piecesPresentRk==0){
+                            return true
+                        } else{
+                            console.log(piecesPresentRk)
+                        }
+                    }
+                }
+            }
+
+            if(direction=="down"){
+                if(targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)){
+                    if(Number(targetId[1]) == Number(startPos[1]) -i){
+                        for (let index = 1; index < Math.abs(i); index++){
+                            if(
+                                document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])+index}"]`).firstChild
+                            ){
+                                piecesPresentRk++
+                            }
+                        }
+                        if(piecesPresentRk==0){
+                            return true
+                        } else{
+                            console.log(piecesPresentRk)
+                        }
+                    }
+                }
+            }
+
+            if(direction=="right"){
+                if(Number(targetId[1]) == Number(startPos[1])){
+                    if(targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) + i){
+                        for (let index = 1; index < Math.abs(i); index++){
+                            if(
+                                document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-index)}`+`${Number(targetId[1])}"]`).firstChild
+                            ){
+                                piecesPresentRk++
+                            }
+                        }
+                        if(piecesPresentRk==0){
+                            return true
+                        } else{
+                            console.log(piecesPresentRk)
+                        }
+                    }
+                }
+            }
+
+            if(direction=="left"){
+                if(Number(targetId[1]) == Number(startPos[1])){
+                    if(targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) - i){
+                        for (let index = 1; index < Math.abs(i); index++){
+                            if(
+                                document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+index)}`+`${Number(targetId[1])}"]`).firstChild
+                            ){
+                                piecesPresentRk++
+                            }
+                        }
+                        if(piecesPresentRk==0){
+                            return true
+                        } else{
+                            console.log(piecesPresentRk)
                         }
                     }
                 }
@@ -299,93 +364,39 @@ function checkValidMove(target){
         case 'rook_piece' :
             if(
                 //Movement along the y axis but x is constant
-                (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0)
-                && (
-                        //check for upward movement (-y)
-                        (Number(targetId[1]) == Number(startPos[1]) +1)
-                        || (Number(targetId[1]) == Number(startPos[1]) +2
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-1}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) +3
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-2}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) +4
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-3}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) +5
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-4}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) +6
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-5}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) +7
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])-6}"]`).firstChild
-                        )//check for downward movement (-y)
-                        || (Number(targetId[1]) == Number(startPos[1]) -1)
-                        || (Number(targetId[1]) == Number(startPos[1]) -2
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])+1}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) -3
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])+2}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) -4
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])+3}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) -5
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])+4}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) -6
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])+5}"]`).firstChild
-                        )
-                        || (Number(targetId[1]) == Number(startPos[1]) -7
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0))}`+`${Number(targetId[1])+6}"]`).firstChild
-                        )
-                    )
-                )
-                || //Movement along the x axis but y is constant
-                (Number(targetId[1]) == Number(startPos[1])
-                && (
-                        //check for right-ward movement (+x)
-                        (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) + 1)
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) +2
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-1)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) +3
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-2)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) +4
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-3)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) +5
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-4)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) +6
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-5)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) +7
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)-6)}`+`${Number(targetId[1])}"]`).firstChild
-                        )//check for left-ward movement (-x)
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) - 1)
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) -2
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+1)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) -3
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+2)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) -4
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+3)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) -5
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+4)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) -6
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+5)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                        || (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) -7
-                        && !document.querySelector(`[cell-id="${String.fromCharCode(targetId[0].charCodeAt(0)+6)}`+`${Number(targetId[1])}"]`).firstChild
-                        )
-                    )
-                )
+                //check for upward movement (+y)
+                targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) && Number(targetId[1]) == Number(startPos[1]) +1
+                || checkForSpace(2, "rk_pc", "up")
+                || checkForSpace(3, "rk_pc", "up")
+                || checkForSpace(4, "rk_pc", "up")
+                || checkForSpace(5, "rk_pc", "up")
+                || checkForSpace(6, "rk_pc", "up")
+                || checkForSpace(7, "rk_pc", "up")
+                //check for downward movement (-y)
+                || targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) && (Number(targetId[1]) == Number(startPos[1]) -1)
+                || checkForSpace(2, "rk_pc", "down")
+                || checkForSpace(3, "rk_pc", "down")
+                || checkForSpace(4, "rk_pc", "down")
+                || checkForSpace(5, "rk_pc", "down")
+                || checkForSpace(6, "rk_pc", "down")
+                || checkForSpace(7, "rk_pc", "down")
+                //Movement along the x axis but y is constant
+                //check for right-ward movement
+                || Number(targetId[1]) == Number(startPos[1]) && (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) + 1)
+                || checkForSpace(2, "rk_pc", "right")
+                || checkForSpace(3, "rk_pc", "right")
+                || checkForSpace(4, "rk_pc", "right")
+                || checkForSpace(5, "rk_pc", "right")
+                || checkForSpace(6, "rk_pc", "right")
+                || checkForSpace(7, "rk_pc", "right")
+                //check for left-ward movement (-x)
+                || Number(targetId[1]) == Number(startPos[1]) && (targetId[0].charCodeAt(0) == startPos[0].charCodeAt(0) - 1)
+                || checkForSpace(2, "rk_pc", "left")
+                || checkForSpace(3, "rk_pc", "left")
+                || checkForSpace(4, "rk_pc", "left")
+                || checkForSpace(5, "rk_pc", "left")
+                || checkForSpace(6, "rk_pc", "left")
+                || checkForSpace(7, "rk_pc", "left")
             ){
                 return true
             }
