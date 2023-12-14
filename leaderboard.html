@@ -53,18 +53,18 @@
       <!-- Buttons to filer the leader-board table -->
       <div class="filters">
         <button type="button" class="filter_btn" id="filter_btn_1">
-          Top 10 | +
+          <span id="filter_btn_1_name">All</span> | +
           <div class="drop_down" id="drop_down_1">
             <ul>
-              <li class="filter_option">Top 10</li>
+              <li onclick="filterAmount(user_details_sorted, 0, 3)" class="filter_option">Top 3</li>
               <li class="list_ivider">
                 <div class="drop_down_divider"></div>
               </li>
-              <li class="filter_option">Top 15</li>
+              <li onclick="filterAmount(user_details_sorted, 0, 5)" class="filter_option">Top 5</li>
               <li class="list_ivider">
                 <div class="drop_down_divider"></div>
               </li>
-              <li class="filter_option">Top 20</li>
+              <li onclick="filterAmount(user_details_sorted, 0, 'all')" class="filter_option">All</li>
             </ul>
           </div>
         </button>
@@ -104,115 +104,7 @@
         </thead>
 
         <tbody>
-          <!-- <tr>
-            <td class="player_rank">1</td>
-            <td class="player_name">AmbiguousFish3000</td>
-            <td class="player_points">30</td>
-            <td class="player_matches">15</td>
-            <td class="player_title">Novice King</td>
-            <td class="player_win">15</td>
-            <td class="player_draw">15</td>
-            <td class="player_loss">15</td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>4</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>5</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>6</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>7</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>8</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>9</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>10</td>
-            <td>AmbiguousFish3000</td>
-            <td>30</td>
-            <td>15</td>
-            <td>Novice King</td>
-            <td>15</td>
-            <td>15</td>
-            <td>15</td>
-          </tr> -->
+          
         </tbody>
       </table>
     </section>

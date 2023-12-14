@@ -82,5 +82,33 @@ function setLeaderboard(arr){
     });
 }
 
-//Creating the leaderboard, updates each page load
+
+// //Creating the leaderboard, updates each page load
+// var testArr = user_details_sorted.slice(0,3)
 setLeaderboard(user_details_sorted);
+
+function filterAmount(arr, slice1, slice2){
+    if(tbody[0].firstChild){
+        tbody[0].innerHTML = ""
+    }
+
+    if(slice1==0 && slice2==3){
+        filterName = document.getElementById("filter_btn_1_name");
+        filterName.innerHTML= "Top 3"
+    }
+    if(slice1==0 && slice2==5){
+        filterName = document.getElementById("filter_btn_1_name");
+        filterName.innerHTML= "Top 5"
+    }
+    if(slice1==0 && slice2=="all"){
+        filterName = document.getElementById("filter_btn_1_name");
+        filterName.innerHTML= "All"
+    }
+
+    if(slice2 == "all"){
+        setLeaderboard(arr);
+    }else{
+        tempArr = arr.slice(slice1,slice2);
+        setLeaderboard(tempArr)
+    }
+}
