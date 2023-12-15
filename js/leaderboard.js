@@ -64,7 +64,7 @@ function setLeaderboard(arr) {
       element.username,
       element.points ? element.points : 0,
       element.matches ? element.matches : 0,
-      element.title,
+      element.title ? element.points : "no title",
       element.win ? element.win : 0,
       element.draw ? element.draw : 0,
       element.loss ? element.loss : 0,

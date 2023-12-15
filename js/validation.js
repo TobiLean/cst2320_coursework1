@@ -244,6 +244,8 @@ function login(event) {
   event.stopPropagation();
 
   checkUserExist("login");
+  checkUserName(uNameDiv);
+  checkPassword(pWord, pWordDiv);
 
   if (userExist == true) {
     if (loggedUserNum < 3) {
@@ -263,6 +265,8 @@ function login(event) {
       sessionStorage.removeItem("loggedUser2");
       loggedUserNum = 0;
     }
+  }else{
+    alert("--Plese check username and password--")
   }
 }
 
