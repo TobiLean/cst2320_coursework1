@@ -1,6 +1,7 @@
 var modes = Array.from(document.getElementsByClassName("mode_option"));
 var themes = Array.from(document.getElementsByClassName("theme_option"));
-var start_end = document.getElementById("start_end_btn");
+var start = document.getElementById("start_btn");
+var end = document.getElementById("end_btn");
 var cells_light = Array.from(document.getElementsByClassName("cell light"));
 var cells_dark = Array.from(document.getElementsByClassName("cell dark"));
 // const pl1 = sessionStorage.getItem("loggedUser1");
@@ -124,12 +125,20 @@ themes[2].addEventListener("click", () => {
 });
 
 //checks for button click on start button (start button used to begin the game and start player timer)
-start_end.addEventListener("click", (event) => {
-  if (event.target.style.backgroundColor == "red") {
-    event.target.style.backgroundColor = "green";
-    start_end.value = "Start";
-  } else {
-    start_end.style.backgroundColor = "red";
-    start_end.value = "End";
-  }
+start.addEventListener("click", () => {
+  // if (event.target.style.backgroundColor == "red") {
+  //   event.target.style.backgroundColor = "green";
+  //   start_end.value = "Start";
+  // } else {
+  //   start_end.style.backgroundColor = "red";
+  //   start_end.value = "End";
+  // }
+
+  start.style.display = "none"
+  end.style.display = "block"
 });
+
+end.addEventListener("click", ()=>{
+  start.style.display = "block"
+  end.style.display = "none"
+})

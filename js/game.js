@@ -1,10 +1,103 @@
 const cells = document.querySelectorAll(".cell");
-const startBtn = document.getElementById("start_end_btn")
+const startBtn = document.getElementById("start_btn")
+const endBtn = document.getElementById("end_btn")
 const player1 = sessionStorage.getItem("loggedUser1");
 const player2 = sessionStorage.getItem("loggedUser2");
 const kings = Array.from(document.querySelectorAll("#king_piece"))
+const user1Minutes = document.getElementById('user_1_min');
+const user2Minutes = document.getElementById('user_2_min');
+const user1Seconds = document.getElementById('user_1_sec');
+const user2Seconds = document.getElementById('user_2_sec');
+var modes = Array.from(document.getElementsByClassName("mode_option"));
+var modeOpt;
+var pause = false;
+var userTime;
+
 let user_details = JSON.parse(localStorage.getItem("user_details"))
 console.log(user_details)
+
+let player1Time;
+let player2Time;
+
+function timer(time_amount, player){
+    let initialTime = new Date().getTime()
+    let deadLine = initialTime + 60000*time_amount;
+    let timeCounter1;
+    let timeCounter2;
+
+    if(player == 1){
+        timeCounter1 = setInterval(function (){
+            let nowTime = new Date().getTime();
+            player1Time = deadLine - nowTime;
+            let min = Math.floor((player1Time%(1000*60*60))/(1000*60));
+            let sec = Math.floor((player1Time%(1000*60))/1000);
+            user1Minutes.innerHTML = min;
+            user1Seconds.innerHTML = sec;
+        
+            if (player1Time < 0) {
+                clearInterval(timeCounter1);
+            }
+    
+            if(pause == true && userTime == 1){
+                clearInterval(timeCounter1);
+            }
+            else if(pause == true && userTime == "all"){
+                console.log("hoho time paused for 1")
+                clearInterval(timeCounter1);
+            }
+
+            checkWin()
+
+        }, 1000)
+    }
+
+    if(player == 2){
+        timeCounter2 = setInterval(function (){
+            let nowTime = new Date().getTime();
+            player2Time = deadLine - nowTime;
+            let min = Math.floor((player2Time%(1000*60*60))/(1000*60));
+            let sec = Math.floor((player2Time%(1000*60))/1000);
+            user2Minutes.innerHTML = min;
+            user2Seconds.innerHTML = sec;
+        
+            if (player2Time < 0) {
+                clearInterval(timeCounter2);
+                console.log(player2Time)
+            }
+    
+            if(pause == true && userTime == 2){
+                clearInterval(timeCounter2);
+            }
+            else if(pause == true && userTime == "all"){
+                console.log("hoho time paused for 2")
+                clearInterval(timeCounter2);
+            }
+
+        }, 1000)
+    }
+
+}
+
+function pauseTime(forPlayer){
+    pause = true
+    userTime = forPlayer
+}
+
+function resumeTime(player){
+    if(pause == true){
+        pause = false
+    }
+
+    if(player == 1){
+        deadLine = player1Time/60000
+        timer(deadLine, 1)
+    }
+
+    if(player == 2){
+        deadLine = player2Time/60000
+        timer(deadLine, 2)
+    }
+}
 
 // console.log(user_details.find(obj => obj.username === player1).lastname)
 
@@ -60,19 +153,61 @@ function setCellId(){
     })
 }
 
+modes[0].addEventListener("click", ()=>{
+    modeOpt = "blitz"
+})
+modes[1].addEventListener("click", ()=>{
+    modeOpt = "rapid"
+})
+modes[2].addEventListener("click", ()=>{
+    modeOpt = "bullet"
+})
+
+var gameStarted;
+
 function startGame (){
     const kings = Array.from(document.querySelectorAll("#king_piece"))
-    var gameStarted;
     if(startBtn.value=="Start"){
         setCellId();
         setPieces();
         gameStarted = true;
     }
 
+    if(modeOpt == "blitz"){
+        timer(10, 1);
+        timer(10, 2);
+
+        setCellId();
+        setPieces();
+        gameStarted = true;
+    }
+    else if(modeOpt == "rapid"){
+        timer(5, 1);
+        timer(5, 2);
+        setCellId();
+        setPieces();
+        gameStarted = true;
+    }
+    else if(modeOpt == "bullet"){
+        timer(0.1, 1);
+        timer(0.1, 2);
+        setCellId();
+        setPieces();
+        gameStarted = true;
+    }
+}
+
+function endGame(){
+
+    const kings = Array.from(document.querySelectorAll("#king_piece"))
+
     if(
-        startBtn.value=="End" && kings.some(king => king.firstChild.classList.contains("dark_piece"))
+        gameStarted==true && kings.some(king => king.firstChild.classList.contains("dark_piece"))
         && kings.some(king => king.firstChild.classList.contains("light_piece"))
         ){
+
+            pauseTime("all");
+
             if(user_details.find(obj => obj.username === player1).draw == null)
             {
                 user_details.find(obj => obj.username === player1).draw = 1
@@ -104,15 +239,12 @@ function startGame (){
             setCellId();
             setPieces();
             console.log("draw")
-    }
-
-    if(startBtn.value=="End"){
+    } else{
+        pauseTime("all");
         cells.forEach(cell=> cell.innerHTML="")
         playerTurn = 'light_piece'
     }
 }
-
-
 
 cells.forEach(cell => {
     cell.addEventListener('dragstart', dragPiece);
@@ -558,7 +690,7 @@ function changePlayerTurn(){
 function checkWin(){
     const kings = Array.from(document.querySelectorAll("#king_piece"))
 
-    if(!kings.some(king => king.firstChild.classList.contains("light_piece"))){
+    if(!kings.some(king => king.firstChild.classList.contains("light_piece")) || player1Time < 0){
         alert("black wins");
 
         if(user_details.find(obj => obj.username === player2).win == null)
@@ -590,7 +722,7 @@ function checkWin(){
         localStorage.setItem("user_details", JSON.stringify(user_details))
     }
 
-    if(!kings.some(king => king.firstChild.classList.contains("dark_piece"))){
+    if(!kings.some(king => king.firstChild.classList.contains("dark_piece")) || player2Time < 0){
         alert("white wins");
 
         if(user_details.find(obj => obj.username === player1).win == null)
@@ -621,4 +753,5 @@ function checkWin(){
         cells.forEach(cell => cell.firstChild?.setAttribute("draggable", false));
         localStorage.setItem("user_details", JSON.stringify(user_details))
     }
+
 }

@@ -361,6 +361,27 @@ path {
   width: 85px;
 }
 
+#end_div {
+  position: relative;
+  top: 200px;
+  width: max-content;
+  height: max-content;
+  margin: auto;
+  
+}
+
+#end_div input {
+  background-color: red;
+  border: 0;
+  color: var(--navbar_white);
+  border-radius: 5px;
+  font-family: encodeSans, "Encode Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  width: 85px;
+  display: none;
+}
+
 /* 
     Footer section styling.
 */
