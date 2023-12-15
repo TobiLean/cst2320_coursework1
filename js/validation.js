@@ -155,6 +155,7 @@ function checkUserExist(typeOfUser = "signup") {
           console.log(loggedUserNum);
         }
       } else {
+        userExist= false;
         console.log("--check user details--");
         console.log(tempName);
       }
@@ -163,6 +164,7 @@ function checkUserExist(typeOfUser = "signup") {
         userExist = true;
         tempUser.logged = true;
       } else {
+        userExist= false;
         console.log("--check user details--");
         console.log(tempPWord);
       }
