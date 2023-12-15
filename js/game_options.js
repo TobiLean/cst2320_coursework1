@@ -126,14 +126,6 @@ themes[2].addEventListener("click", () => {
 
 //checks for button click on start button (start button used to begin the game and start player timer)
 start.addEventListener("click", () => {
-  // if (event.target.style.backgroundColor == "red") {
-  //   event.target.style.backgroundColor = "green";
-  //   start_end.value = "Start";
-  // } else {
-  //   start_end.style.backgroundColor = "red";
-  //   start_end.value = "End";
-  // }
-
   start.style.display = "none"
   end.style.display = "block"
 });

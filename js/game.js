@@ -12,6 +12,9 @@ var modes = Array.from(document.getElementsByClassName("mode_option"));
 var modeOpt;
 var pause = false;
 var userTime;
+var moves = 0;
+var p2paused;
+var p1resumed;
 
 let user_details = JSON.parse(localStorage.getItem("user_details"))
 console.log(user_details)
@@ -37,7 +40,7 @@ function timer(time_amount, player){
             if (player1Time < 0) {
                 clearInterval(timeCounter1);
             }
-    
+
             if(pause == true && userTime == 1){
                 clearInterval(timeCounter1);
             }
@@ -99,12 +102,36 @@ function resumeTime(player){
     }
 }
 
+function chh(){
+
+    console.log("rrr")
+
+    if(moves %2 == 0 && moves>0){
+        pauseTime(1)
+        setTimeout(()=>{
+            resumeTime(2)
+            console.log("yo")
+        },2300)
+    }
+
+    if(moves %2 != 0){
+        setTimeout(()=>{
+            pauseTime(2)
+            console.log("nio")
+        }, 2300)
+        resumeTime(1)
+    }
+}
+
+setInterval(()=>{
+    chh
+}, 1000)
+
 // console.log(user_details.find(obj => obj.username === player1).lastname)
 
 let startPos;
 let draggedPiece;
-let playerTurn = 'light_piece'
-console.log(playerTurn + "'s turn");
+let playerTurn;
 
 const INITIAL_PIECE_POSITION = [
     ROOK, KNIGHT, BISHOP, KING, QUEEN, BISHOP, KNIGHT, ROOK,
@@ -167,6 +194,7 @@ var gameStarted;
 
 function startGame (){
     const kings = Array.from(document.querySelectorAll("#king_piece"))
+    playerTurn = 'light_piece';
     if(startBtn.value=="Start"){
         setCellId();
         setPieces();
@@ -175,7 +203,7 @@ function startGame (){
 
     if(modeOpt == "blitz"){
         timer(10, 1);
-        timer(10, 2);
+        timer(10, 2)
 
         setCellId();
         setPieces();
@@ -246,6 +274,8 @@ function endGame(){
     }
 }
 
+console.log(playerTurn + "'s turn");
+
 cells.forEach(cell => {
     cell.addEventListener('dragstart', dragPiece);
     cell.addEventListener('dragover', dragOver);
@@ -277,6 +307,14 @@ function dragDrop(el){
             
             checkWin();
             changePlayerTurn();
+            // if(playerTurn == "light_piece"){
+            //     pauseTime(2)
+            //     resumeTime(1)
+            // }
+            // if(playerTurn == "dark_piece"){
+            //     pauseTime(1)
+            //     resumeTime(2)
+            // }
             return;
         }
 
@@ -289,6 +327,14 @@ function dragDrop(el){
             el.target.append(draggedPiece);
             checkWin();
             changePlayerTurn();
+            // if(playerTurn == "light_piece"){
+            //     pauseTime(2)
+            //     resumeTime(1)
+            // }
+            // if(playerTurn == "dark_piece"){
+            //     pauseTime(1)
+            //     resumeTime(2)
+            // }
             return
         }
     }
@@ -679,11 +725,14 @@ function checkValidMove(target){
 
 function changePlayerTurn(){
     if (playerTurn == "light_piece"){
+        moves++
         playerTurn = "dark_piece"
         console.log(playerTurn + "'s turn");
+        console.log(moves);
     } else {
+        moves++
         playerTurn = "light_piece";
-        console.log(playerTurn + "'s turn");
+        console.log(moves);
     }
 }
 
