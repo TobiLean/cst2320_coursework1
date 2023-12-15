@@ -265,3 +265,17 @@ function login(event) {
     }
   }
 }
+
+//Function to logout of all users
+function logout() {
+  alert("--Logged out all users!--");
+  sessionStorage.removeItem("loggedUser1");
+  sessionStorage.removeItem("loggedUser2");
+  loggedUserNum = 0;
+  window.location.reload();
+}
+
+//event listener to handle logout button click
+logoutBtn[0].addEventListener("click", function () {
+  logout();
+});

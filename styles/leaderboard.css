@@ -208,7 +208,7 @@ button {
   visibility: hidden;
 }
 
-.drop_down ul li:hover{
+.drop_down ul li:hover {
   color: var(--mustard_yellow);
   cursor: pointer;
 }
@@ -284,7 +284,7 @@ button {
   visibility: hidden;
 }
 
-.drop_down ul li:hover{
+.drop_down ul li:hover {
   color: var(--mustard_yellow);
   cursor: pointer;
 }

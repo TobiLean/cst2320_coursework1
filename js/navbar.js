@@ -3,6 +3,7 @@ const navPl1 = document.getElementById("nav_pl1");
 const navPl2 = document.getElementById("nav_pl2");
 const dropDownBtn = document.getElementsByClassName("drop_down_btn");
 const dropDownDivider = document.getElementsByClassName("drop_down_divider");
+const logoutBtn = document.getElementsByClassName("logout_btn");
 const pl1 = sessionStorage.getItem("loggedUser1");
 const pl2 = sessionStorage.getItem("loggedUser2");
 

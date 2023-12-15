@@ -62,7 +62,6 @@
     </nav>
 
     <section class="main_section">
-
       <!-- Making chess-board with each individual cell, could be done automatically, but better to be hard coded-->
       <div id="chess_board">
         <div class="cell light"></div>
@@ -137,17 +136,25 @@
             <div class="profile_picture" id="player_picture_1"></div>
             <p class="user_name">Player 1</p>
             <p class="timer_btn" id="pausePl1" onclick="pauseTime(1)">Pause</p>
-            <p class="timer_btn" id="pausePl1" onclick="resumeTime(1)">Resume</p>
+            <p class="timer_btn" id="pausePl1" onclick="resumeTime(1)">
+              Resume
+            </p>
           </div>
 
-          <div class="timer" id="timer_user_1"><span id="user_1_min">00</span>:<span id="user_1_sec">00</span></div>
+          <div class="timer" id="timer_user_1">
+            <span id="user_1_min">00</span>:<span id="user_1_sec">00</span>
+          </div>
           <p id="versus_text">VS</p>
-          <div class="timer" id="timer_user_2"><span id="user_2_min">00</span>:<span id="user_2_sec">00</span></div>
+          <div class="timer" id="timer_user_2">
+            <span id="user_2_min">00</span>:<span id="user_2_sec">00</span>
+          </div>
           <div class="user" id="user_2">
             <div class="profile_picture" id="player_picture_2"></div>
             <p class="user_name">Player 2</p>
             <p class="timer_btn" id="pausePl2" onclick="pauseTime(2)">Pause</p>
-            <p class="timer_btn" id="pausePl2" onclick="resumeTime(2)">Resume</p>
+            <p class="timer_btn" id="pausePl2" onclick="resumeTime(2)">
+              Resume
+            </p>
           </div>
         </div>
 
@@ -173,7 +180,12 @@
         </div>
 
         <div id="start_div">
-          <input onclick="startGame()" id="start_btn" type="button" value="Start" />
+          <input
+            onclick="startGame()"
+            id="start_btn"
+            type="button"
+            value="Start"
+          />
         </div>
         <div id="end_div">
           <input onclick="endGame()" id="end_btn" type="button" value="End" />
@@ -239,6 +251,8 @@
   <script src="./js/game.js"></script>
   <!-- importing script to handle options button operations -->
   <script src="./js/game_options.js"></script>
+  <!-- importing script to handle user login events and consequences -->
+  <script src="./js/navbar.js"></script>
   <script src="./js/navbar.js"></script>
 
   <!-- importing font awesome script for social media logos -->
