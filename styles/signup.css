@@ -52,6 +52,8 @@ footer {
   color: #000;
 }
 
+/* styling links in navbar and footer */
+
 #navigation_div,
 footer,
 .nav_link a,
@@ -71,7 +73,7 @@ footer,
 }
 
 .nav_link a:hover {
-  color: var(--subtle_pink);
+  color: var(--mustard_yellow);
 }
 
 #profile_select a {
@@ -80,10 +82,6 @@ footer,
   font-weight: 600;
   transition: color ease-in 0.15s;
 }
-
-/* #navbar_signup {
-  display: block;
-} */
 
 #nav_profile_name {
   font-size: 1rem;
@@ -98,7 +96,7 @@ footer,
 }
 
 #profile_select a:hover {
-  color: var(--subtle_pink);
+  color: var(--mustard_yellow);
 }
 
 #page_navigation {

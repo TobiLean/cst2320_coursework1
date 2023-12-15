@@ -4,21 +4,18 @@ var start = document.getElementById("start_btn");
 var end = document.getElementById("end_btn");
 var cells_light = Array.from(document.getElementsByClassName("cell light"));
 var cells_dark = Array.from(document.getElementsByClassName("cell dark"));
-// const pl1 = sessionStorage.getItem("loggedUser1");
-// const pl2 = sessionStorage.getItem("loggedUser1");
 
-
-function checkPlayer (){
-  if(player1 !=null){
+function checkPlayer() {
+  if (player1 != null) {
     document.getElementsByClassName("user_name")[0].innerHTML = player1;
   }
 
-  if(player2 !=null){
+  if (player2 != null) {
     document.getElementsByClassName("user_name")[1].innerHTML = player2;
   }
 }
 
-checkPlayer()
+checkPlayer();
 
 //checks for button click on first mode button and runs a function
 modes[0].addEventListener("click", () => {
@@ -100,7 +97,7 @@ themes[1].addEventListener("click", () => {
     cells_dark[i].setAttribute("style", "background-color: #00682c");
   }
 
-  console.log("Test 100")
+  console.log("Test 100");
 });
 
 //checks for button click on third theme button and runs a function
@@ -126,11 +123,11 @@ themes[2].addEventListener("click", () => {
 
 //checks for button click on start button (start button used to begin the game and start player timer)
 start.addEventListener("click", () => {
-  start.style.display = "none"
-  end.style.display = "block"
+  start.style.display = "none";
+  end.style.display = "block";
 });
 
-end.addEventListener("click", ()=>{
-  start.style.display = "block"
-  end.style.display = "none"
-})
+end.addEventListener("click", () => {
+  start.style.display = "block";
+  end.style.display = "none";
+});

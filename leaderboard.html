@@ -39,6 +39,20 @@
 
         <div id="profile_select">
           <a href="./signup.html">Sign up</a>
+
+          <!-- dropdown for viewing logged in accounts and logging out -->
+          <button type="button" class="drop_down_btn">
+            <span id="nav_pl1">t</span>
+            <div class="drop_down" id="drop_down_1">
+              <ul>
+                <li id="nav_pl2"></li>
+                <li class="list_divider">
+                  <div class="drop_down_divider"></div>
+                </li>
+                <li class="logout_btn">Logout</li>
+              </ul>
+            </div>
+          </button>
           <div id="nav_profile">
             <img
               src="./assests/images/CuteChess_assets_profile_pic_1.png"
@@ -50,37 +64,36 @@
     </nav>
 
     <section class="leaderboard_section">
-      <!-- Buttons to filer the leader-board table -->
+      <!-- Buttons to filter the leader-board table -->
       <div class="filters">
         <button type="button" class="filter_btn" id="filter_btn_1">
           <span id="filter_btn_1_name">All</span> | +
           <div class="drop_down" id="drop_down_1">
             <ul>
-              <li onclick="filterAmount(user_details_sorted, 0, 3)" class="filter_option">Top 3</li>
-              <li class="list_ivider">
+              <li
+                onclick="filterAmount(user_details_sorted, 0, 3)"
+                class="filter_option"
+              >
+                Top 3
+              </li>
+              <li class="list_divider">
                 <div class="drop_down_divider"></div>
               </li>
-              <li onclick="filterAmount(user_details_sorted, 0, 5)" class="filter_option">Top 5</li>
-              <li class="list_ivider">
+              <li
+                onclick="filterAmount(user_details_sorted, 0, 5)"
+                class="filter_option"
+              >
+                Top 5
+              </li>
+              <li class="list_divider">
                 <div class="drop_down_divider"></div>
               </li>
-              <li onclick="filterAmount(user_details_sorted, 0, 'all')" class="filter_option">All</li>
-            </ul>
-          </div>
-        </button>
-        <button type="button" class="filter_btn" id="filter_btn_2">
-          Blitz | +
-          <div class="drop_down" id="drop_down_2">
-            <ul>
-              <li class="filter_option">Blitz</li>
-              <li class="list_ivider">
-                <div class="drop_down_divider"></div>
+              <li
+                onclick="filterAmount(user_details_sorted, 0, 'all')"
+                class="filter_option"
+              >
+                All
               </li>
-              <li class="filter_option">Rapid</li>
-              <li class="list_ivider">
-                <div class="drop_down_divider"></div>
-              </li>
-              <li class="filter_option">Bullet</li>
             </ul>
           </div>
         </button>
@@ -103,12 +116,11 @@
           </tr>
         </thead>
 
-        <tbody>
-          
-        </tbody>
+        <tbody></tbody>
       </table>
     </section>
 
+    <!-- Footer section -->
     <footer>
       <div class="footer_element" id="support">
         <p class="footer_header">Support</p>
@@ -160,6 +172,7 @@
   </body>
 
   <script src="./js/leaderboard.js"></script>
+  <script src="./js/navbar.js"></script>
 
   <!-- importing font-awesome kit for social media icons -->
   <script

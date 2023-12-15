@@ -52,6 +52,8 @@
     <section id="main">
       <div class="main_div" id="login_form">
         <p class="form_header">Sign-up</p>
+
+        <!-- Sign up form -->
         <form>
           <div id="firstname_div" class="form_div">
             <label for="firstname" id="firstname_label">Firstname</label><br />
@@ -78,7 +80,10 @@
             <input type="password" id="password" required />
           </div>
 
-          <button onclick="signUp(event)" id="continue_btn" type="submit">Continue ></button>
+          <!-- Signup button with click event listener, calls the login function -->
+          <button onclick="signUp(event)" id="continue_btn" type="submit">
+            Continue >
+          </button>
 
           <p id="have_an_account">
             already have an account <a href="./login.html">login</a>
@@ -99,5 +104,4 @@
   </body>
 
   <script src="./js/validation.js"></script>
-
 </html>

@@ -42,6 +42,20 @@
 
         <div id="profile_select">
           <a href="./signup.html">Sign up</a>
+
+          <!-- dropdown for viewing logged in accounts and logging out -->
+          <button type="button" class="drop_down_btn">
+            <span id="nav_pl1">t</span>
+            <div class="drop_down" id="drop_down_1">
+              <ul>
+                <li id="nav_pl2"></li>
+                <li class="list_divider">
+                  <div class="drop_down_divider"></div>
+                </li>
+                <li class="logout_btn">Logout</li>
+              </ul>
+            </div>
+          </button>
           <div id="nav_profile">
             <img
               src="./assests/images/CuteChess_assets_profile_pic_1.png"
@@ -108,7 +122,7 @@
       </div>
     </section>
 
-    <!-- Piece images, brief description and points -->
+    <!-- Piece images, brief description of chess pieces and points -->
 
     <section id="piece_section">
       <div class="piece_details" id="piece_1">
@@ -261,6 +275,9 @@
     </footer>
 
     <!-- importing font-awesome kit for social media icons -->
+
+    <script src="./js/navbar.js"></script>
+
     <script
       src="https://kit.fontawesome.com/2d6490a2b6.js"
       crossorigin="anonymous"
